@@ -15,3 +15,13 @@ C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\SEGame\SEGame\bin\Debug\SEGame
 C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\SEGame\SEGame\obj\Debug\SEGame.exe
 C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\SEGame\SEGame\obj\Debug\SEGame.xml
 C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\SEGame\SEGame\obj\Debug\SEGame.pdb
+C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\SEGame\SEGame\bin\Debug\SEGame.exe
+C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\SEGame\SEGame\bin\Debug\SEGame.pdb
+C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\SEGame\SEGame\bin\Debug\SEGame.xml
+C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\SEGame\SEGame\obj\Debug\SEGame.vbprojResolveAssemblyReference.cache
+C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\SEGame\SEGame\obj\Debug\SEGame.Menu.resources
+C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\SEGame\SEGame\obj\Debug\SEGame.Game.resources
+C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\SEGame\SEGame\obj\Debug\SEGame.Resources.resources
+C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\SEGame\SEGame\obj\Debug\SEGame.Score.resources
+C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\SEGame\SEGame\obj\Debug\SEGame.vbproj.GenerateResource.Cache
+C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\SEGame\SEGame\obj\Debug\SEGame.Options.resources

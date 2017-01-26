@@ -13,4 +13,12 @@
         hScores.Show()
         hScores = Nothing
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim optionWindow As Options
+        optionWindow = New Options
+        optionWindow.Show()
+        optionWindow = Nothing
+
+    End Sub
 End Class
