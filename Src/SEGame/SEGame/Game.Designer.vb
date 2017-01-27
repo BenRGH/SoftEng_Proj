@@ -33,11 +33,11 @@ Partial Class Game
         Me.charMovTimer_right = New System.Windows.Forms.Timer(Me.components)
         Me.debugBox = New System.Windows.Forms.TextBox()
         Me.character = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.boundBoxOutline = New System.Windows.Forms.PictureBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.timeIndicator = New System.Windows.Forms.TextBox()
         CType(Me.character, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.boundBoxOutline, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button1
@@ -62,7 +62,7 @@ Partial Class Game
         '
         Me.nickLabel.AutoSize = True
         Me.nickLabel.BackColor = System.Drawing.Color.LightGreen
-        Me.nickLabel.ForeColor = System.Drawing.Color.SeaGreen
+        Me.nickLabel.ForeColor = System.Drawing.Color.DarkRed
         Me.nickLabel.Location = New System.Drawing.Point(37, 469)
         Me.nickLabel.Name = "nickLabel"
         Me.nickLabel.Size = New System.Drawing.Size(39, 13)
@@ -72,6 +72,7 @@ Partial Class Game
         'worldTimer
         '
         Me.worldTimer.Enabled = True
+        Me.worldTimer.Interval = 10
         '
         'charMovTimer_up
         '
@@ -92,7 +93,7 @@ Partial Class Game
         'debugBox
         '
         Me.debugBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.debugBox.Location = New System.Drawing.Point(321, 31)
+        Me.debugBox.Location = New System.Drawing.Point(275, 165)
         Me.debugBox.Name = "debugBox"
         Me.debugBox.Size = New System.Drawing.Size(284, 47)
         Me.debugBox.TabIndex = 12
@@ -104,54 +105,63 @@ Partial Class Game
         Me.character.Image = Global.SEGame.My.Resources.Resources.Idle
         Me.character.Location = New System.Drawing.Point(22, 485)
         Me.character.Name = "character"
-        Me.character.Size = New System.Drawing.Size(50, 50)
+        Me.character.Size = New System.Drawing.Size(100, 100)
+        Me.character.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
         Me.character.TabIndex = 10
         Me.character.TabStop = False
         '
-        'PictureBox1
+        'boundBoxOutline
         '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Black
-        Me.PictureBox1.Location = New System.Drawing.Point(95, -1)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(14, 447)
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
+        Me.boundBoxOutline.BackColor = System.Drawing.Color.Red
+        Me.boundBoxOutline.Location = New System.Drawing.Point(12, 452)
+        Me.boundBoxOutline.Name = "boundBoxOutline"
+        Me.boundBoxOutline.Size = New System.Drawing.Size(13, 14)
+        Me.boundBoxOutline.TabIndex = 13
+        Me.boundBoxOutline.TabStop = False
         '
-        'PictureBox2
+        'Label1
         '
-        Me.PictureBox2.BackColor = System.Drawing.Color.White
-        Me.PictureBox2.Location = New System.Drawing.Point(-2, -1)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(111, 621)
-        Me.PictureBox2.TabIndex = 1
-        Me.PictureBox2.TabStop = False
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(568, 12)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(47, 20)
+        Me.Label1.TabIndex = 14
+        Me.Label1.Text = "Time:"
+        '
+        'timeIndicator
+        '
+        Me.timeIndicator.Location = New System.Drawing.Point(621, 12)
+        Me.timeIndicator.Name = "timeIndicator"
+        Me.timeIndicator.Size = New System.Drawing.Size(38, 20)
+        Me.timeIndicator.TabIndex = 15
         '
         'Game
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DimGray
+        Me.BackgroundImage = Global.SEGame.My.Resources.Resources.Background
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(856, 607)
-        Me.Controls.Add(Me.character)
-        Me.Controls.Add(Me.debugBox)
+        Me.Controls.Add(Me.timeIndicator)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.nickLabel)
+        Me.Controls.Add(Me.character)
+        Me.Controls.Add(Me.boundBoxOutline)
+        Me.Controls.Add(Me.debugBox)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.PictureBox2)
+        Me.DoubleBuffered = True
         Me.KeyPreview = True
         Me.Name = "Game"
         Me.Text = "Game"
         CType(Me.character, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.boundBoxOutline, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents character As System.Windows.Forms.PictureBox
@@ -162,4 +172,7 @@ Partial Class Game
     Friend WithEvents charMovTimer_down As System.Windows.Forms.Timer
     Friend WithEvents charMovTimer_left As System.Windows.Forms.Timer
     Friend WithEvents charMovTimer_right As System.Windows.Forms.Timer
+    Friend WithEvents boundBoxOutline As System.Windows.Forms.PictureBox
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents timeIndicator As System.Windows.Forms.TextBox
 End Class

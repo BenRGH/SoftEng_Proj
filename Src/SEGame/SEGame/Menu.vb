@@ -1,4 +1,5 @@
 ﻿Public Class Menu
+    Public speed As Integer = 1
 
     Private Sub playBtn_Click(sender As Object, e As EventArgs) Handles playBtn.Click
         Dim gameWindow As Game

@@ -29,6 +29,8 @@ Partial Class Options
         Me.Label5 = New System.Windows.Forms.Label()
         Me.speedNew = New System.Windows.Forms.NumericUpDown()
         Me.saveBtn = New System.Windows.Forms.Button()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.debugEnable = New System.Windows.Forms.CheckBox()
         CType(Me.speedNew, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -97,11 +99,33 @@ Partial Class Options
         Me.saveBtn.Text = "Save"
         Me.saveBtn.UseVisualStyleBackColor = True
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(67, 225)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(68, 13)
+        Me.Label6.TabIndex = 7
+        Me.Label6.Text = "Debug mode"
+        '
+        'debugEnable
+        '
+        Me.debugEnable.AutoSize = True
+        Me.debugEnable.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.debugEnable.Location = New System.Drawing.Point(151, 225)
+        Me.debugEnable.Name = "debugEnable"
+        Me.debugEnable.Size = New System.Drawing.Size(67, 17)
+        Me.debugEnable.TabIndex = 8
+        Me.debugEnable.Text = "Disabled"
+        Me.debugEnable.UseVisualStyleBackColor = True
+        '
         'Options
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(299, 436)
+        Me.Controls.Add(Me.debugEnable)
+        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.saveBtn)
         Me.Controls.Add(Me.speedNew)
         Me.Controls.Add(Me.Label5)
@@ -123,4 +147,6 @@ Partial Class Options
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents speedNew As System.Windows.Forms.NumericUpDown
     Friend WithEvents saveBtn As System.Windows.Forms.Button
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents debugEnable As System.Windows.Forms.CheckBox
 End Class

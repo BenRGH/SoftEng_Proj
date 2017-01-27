@@ -1,16 +1,25 @@
 ﻿Public Class Game
     'Globals
-    Public speed As Integer = 1
+
     'World
     Dim level As Integer = 0
-    Dim i As Integer = 0
+    Dim timeIndi As Integer = 0
+
     'Character
     Dim nick As String
+        'The area the character can move in
+    Dim movBounds = New Integer(3, 1) {{-20, 430}, {200, 430}, {-20, 605}, {200, 605}}
 
     'Load window
     Private Sub Game_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'level = level save?
         worldTimer.Enabled = True
+
+        'This box is to show what the bounding area looks like while debugging
+        boundBoxOutline.Top = movBounds(0, 1)
+        boundBoxOutline.Left = movBounds(0, 0)
+        boundBoxOutline.Height = movBounds(2, 1) - movBounds(0, 1) 'lowest point - highest point = height
+        boundBoxOutline.Width = movBounds(1, 0) - movBounds(0, 0) 'rightest point - leftest point = width
 
     End Sub
     'Close game window
@@ -69,58 +78,74 @@
 
         'Move the nickname label to follow the character
         nickLabel.Top = character.Top - 19 'top left of screen is 0,0 so we '-' to go up
-        nickLabel.Left = character.Right - (nickLabel.Width / 2 + 5)
+        nickLabel.Left = character.Right - (nickLabel.Width / 2) - 50
+
+        'Game time indicator
+        timeIndi += 1
+        Dim realTimeIndi As Integer = timeIndi / 50
+        timeIndicator.Text = realTimeIndi
 
 
+        'Debug only
+        debugBox.Visible = My.Settings.debugMode
+        boundBoxOutline.Visible = My.Settings.debugMode
     End Sub
     'Movement UP steps
     Private Sub charMovTimer_up_Tick(sender As Object, e As EventArgs) Handles charMovTimer_up.Tick
         If boundCheck("up") Then
-            character.Top -= speed
+            character.Top -= My.Settings.speed
         End If
+
+        debugBox.Text = "upping"
     End Sub
     'Movement DOWN steps
     Private Sub charMovTimer_down_Tick(sender As Object, e As EventArgs) Handles charMovTimer_down.Tick
         If boundCheck("down") Then
-            character.Top += speed
+            character.Top += My.Settings.speed
         End If
+
+        debugBox.Text = "downing"
     End Sub
     'Movement LEFT steps
     Private Sub charMovTimer_left_Tick(sender As Object, e As EventArgs) Handles charMovTimer_left.Tick
         If boundCheck("left") Then
-            character.Left -= speed
+            character.Left -= My.Settings.speed
         End If
+
+        debugBox.Text = "lefting"
     End Sub
     'Movement RIGHT steps
     Private Sub charMovTimer_right_Tick(sender As Object, e As EventArgs) Handles charMovTimer_right.Tick
         If boundCheck("right") Then
-            character.Left += speed
+            character.Left += My.Settings.speed
         End If
+
+        debugBox.Text = "righting"
     End Sub
     'Check if character outside allowed zone
     Private Function boundCheck(direction As String)
         Dim canMove As Boolean = False
 
         If direction = "up" Then
-            If character.Top > 430 Then
+            If character.Top > movBounds(0, 1) Then
                 canMove = True
 
             End If
 
         ElseIf direction = "down" Then
-            If character.Bottom < 605 Then
+            If character.Bottom < movBounds(2, 1) Then
                 canMove = True
 
             End If
 
         ElseIf direction = "left" Then
-            If character.Left > 1 Then
+            If character.Left > movBounds(0, 0) Then
                 canMove = True
 
             End If
 
         ElseIf direction = "right" Then
-            If character.Right < 100 Then
+            If character.Right < movBounds(3, 0) Then
                 canMove = True
 
             End If
@@ -131,6 +156,6 @@
     End Function
     'Level load
     Private Sub loadLevel(level As Integer)
-
+        'do 
     End Sub
 End Class

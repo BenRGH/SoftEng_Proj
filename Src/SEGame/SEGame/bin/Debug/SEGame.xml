@@ -15,15 +15,15 @@ SEGame
   Overrides the current thread's CurrentUICulture property for all
   resource lookups using this strongly typed resource class.
 </summary>
+</member><member name="P:SEGame.My.Resources.Resources.Background">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
 </member><member name="P:SEGame.My.Resources.Resources.enemy">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member><member name="P:SEGame.My.Resources.Resources.Idle">
-	<summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
-</summary>
-</member><member name="P:SEGame.My.Resources.Resources.player">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

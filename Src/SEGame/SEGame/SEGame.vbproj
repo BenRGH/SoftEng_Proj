@@ -144,22 +144,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="EVSHAFT.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="space-desk-office-workspace.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="player.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="enemy.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Idle.gif" />
     <None Include="Resources\Shooting.gif" />
-    <None Include="Resources\Idle.gif" />
-    <Content Include="Shooting.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background.png" />
+    <Content Include="Resources\Idle.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
