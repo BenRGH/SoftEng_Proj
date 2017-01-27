@@ -23,10 +23,6 @@ Partial Class Game
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim charMovTimer_up As System.Windows.Forms.Timer
-        Dim charMovTimer_down As System.Windows.Forms.Timer
-        Dim charMovTimer_left As System.Windows.Forms.Timer
-        Dim charMovTimer_right As System.Windows.Forms.Timer
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -34,10 +30,11 @@ Partial Class Game
         Me.character = New System.Windows.Forms.PictureBox()
         Me.nickLabel = New System.Windows.Forms.Label()
         Me.worldTimer = New System.Windows.Forms.Timer(Me.components)
-        charMovTimer_up = New System.Windows.Forms.Timer(Me.components)
-        charMovTimer_down = New System.Windows.Forms.Timer(Me.components)
-        charMovTimer_left = New System.Windows.Forms.Timer(Me.components)
-        charMovTimer_right = New System.Windows.Forms.Timer(Me.components)
+        Me.charMovTimer_up = New System.Windows.Forms.Timer(Me.components)
+        Me.charMovTimer_down = New System.Windows.Forms.Timer(Me.components)
+        Me.charMovTimer_left = New System.Windows.Forms.Timer(Me.components)
+        Me.charMovTimer_right = New System.Windows.Forms.Timer(Me.components)
+        Me.debugBox = New System.Windows.Forms.TextBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.character, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -89,22 +86,6 @@ Partial Class Game
         Me.character.TabIndex = 10
         Me.character.TabStop = False
         '
-        'charMovTimer_up
-        '
-        AddHandler charMovTimer_up.Tick, AddressOf Me.characterMov_up_Tick
-        '
-        'charMovTimer_down
-        '
-        AddHandler charMovTimer_down.Tick, AddressOf Me.characterMov_down_Tick
-        '
-        'charMovTimer_left
-        '
-        AddHandler charMovTimer_left.Tick, AddressOf Me.characterMov_left_Tick
-        '
-        'charMovTimer_right
-        '
-        AddHandler charMovTimer_right.Tick, AddressOf Me.characterMov_right_Tick
-        '
         'nickLabel
         '
         Me.nickLabel.AutoSize = True
@@ -118,19 +99,43 @@ Partial Class Game
         '
         'worldTimer
         '
+        Me.worldTimer.Enabled = True
+        '
+        'charMovTimer_up
+        '
+        '
+        'charMovTimer_down
+        '
+        '
+        'charMovTimer_left
+        '
+        '
+        'charMovTimer_right
+        '
+        '
+        'debugBox
+        '
+        Me.debugBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.debugBox.Location = New System.Drawing.Point(321, 31)
+        Me.debugBox.Name = "debugBox"
+        Me.debugBox.Size = New System.Drawing.Size(284, 47)
+        Me.debugBox.TabIndex = 12
         '
         'Game
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DimGray
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(856, 607)
+        Me.Controls.Add(Me.debugBox)
         Me.Controls.Add(Me.nickLabel)
         Me.Controls.Add(Me.character)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.PictureBox2)
+        Me.KeyPreview = True
         Me.Name = "Game"
         Me.Text = "Game"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -147,4 +152,9 @@ Partial Class Game
     Friend WithEvents character As System.Windows.Forms.PictureBox
     Friend WithEvents nickLabel As System.Windows.Forms.Label
     Friend WithEvents worldTimer As System.Windows.Forms.Timer
+    Friend WithEvents debugBox As System.Windows.Forms.TextBox
+    Friend WithEvents charMovTimer_up As System.Windows.Forms.Timer
+    Friend WithEvents charMovTimer_down As System.Windows.Forms.Timer
+    Friend WithEvents charMovTimer_left As System.Windows.Forms.Timer
+    Friend WithEvents charMovTimer_right As System.Windows.Forms.Timer
 End Class

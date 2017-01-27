@@ -53,3 +53,16 @@ C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\Maze Game Example\Maze Game Ex
 C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\Maze Game Example\Maze Game Example\obj\Debug\Maze Game Example.exe
 C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\Maze Game Example\Maze Game Example\obj\Debug\Maze Game Example.xml
 C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\Maze Game Example\Maze Game Example\obj\Debug\Maze Game Example.pdb
+C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\Maze Game Example\Maze Game Example\bin\Debug\Maze Game Example.exe
+C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\Maze Game Example\Maze Game Example\bin\Debug\Maze Game Example.pdb
+C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\Maze Game Example\Maze Game Example\bin\Debug\Maze Game Example.xml
+C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\Maze Game Example\Maze Game Example\obj\Debug\Maze Game Example.vbprojResolveAssemblyReference.cache
+C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\Maze Game Example\Maze Game Example\obj\Debug\Maze_Game_Example.Cheats.resources
+C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\Maze Game Example\Maze Game Example\obj\Debug\Maze_Game_Example.Game.resources
+C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\Maze Game Example\Maze Game Example\obj\Debug\Maze_Game_Example.HelpScreen.resources
+C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\Maze Game Example\Maze Game Example\obj\Debug\Maze_Game_Example.Highscores.resources
+C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\Maze Game Example\Maze Game Example\obj\Debug\Maze_Game_Example.Resources.resources
+C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\Maze Game Example\Maze Game Example\obj\Debug\Maze_Game_Example.NameChanging.resources
+C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\Maze Game Example\Maze Game Example\obj\Debug\Maze_Game_Example.WelcomeScreen.resources
+C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\Maze Game Example\Maze Game Example\obj\Debug\Maze_Game_Example.WinFail.resources
+C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\Maze Game Example\Maze Game Example\obj\Debug\Maze Game Example.vbproj.GenerateResource.Cache
