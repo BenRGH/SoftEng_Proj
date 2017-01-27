@@ -1,0 +1,136 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+MazeGameExample
+</name>
+</assembly>
+<members>
+<member name="P:Maze_Game_Example.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:Maze_Game_Example.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="P:Maze_Game_Example.My.Resources.Resources.cheat">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Maze_Game_Example.My.Resources.Resources.Coin">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Maze_Game_Example.My.Resources.Resources.Enemy_Back">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Maze_Game_Example.My.Resources.Resources.Enemy_Forward">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Maze_Game_Example.My.Resources.Resources.Enemy_Left">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Maze_Game_Example.My.Resources.Resources.Enemy_Right">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Maze_Game_Example.My.Resources.Resources.Enemy_RunLeft">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Maze_Game_Example.My.Resources.Resources.Enemy_RunRight">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Maze_Game_Example.My.Resources.Resources.Exit_Gif">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Maze_Game_Example.My.Resources.Resources.Exit_Img0">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Maze_Game_Example.My.Resources.Resources.HelpScreen">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Maze_Game_Example.My.Resources.Resources.PlayButtonSprite">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Maze_Game_Example.My.Resources.Resources.Player__BackWalk">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Maze_Game_Example.My.Resources.Resources.Player__Front">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Maze_Game_Example.My.Resources.Resources.Player__Front1">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Maze_Game_Example.My.Resources.Resources.Player__FrontStill">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Maze_Game_Example.My.Resources.Resources.Player__Left">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Maze_Game_Example.My.Resources.Resources.Player__Right">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Maze_Game_Example.My.Resources.Resources.SunSprite">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Maze_Game_Example.My.Resources.Resources.Treasure">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Maze_Game_Example.My.Resources.Resources.w640">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Maze_Game_Example.My.Resources.Resources.WallSprite">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Maze_Game_Example.My.Resources.Resources.WallSprite___Open_Bottom">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Maze_Game_Example.My.Resources.Resources.WallSprite___Open_Top">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Maze_Game_Example.My.Resources.Resources.WallSprite_Horizonta___Open_Bottom">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Maze_Game_Example.My.Resources.Resources.WallSprite_Horizonta___Open_Top">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Maze_Game_Example.My.Resources.Resources.WallSprite_Horizontal">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Maze_Game_Example.My.Resources.Resources.wil8">
+	<summary>
+  Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+</summary>
+</member><member name="T:Maze_Game_Example.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+</members>
+</doc>

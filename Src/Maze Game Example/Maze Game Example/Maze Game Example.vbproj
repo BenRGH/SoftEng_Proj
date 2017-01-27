@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{64FAE9BB-0885-4812-8536-3054370770C0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Maze_Game_Example.My.MyApplication</StartupObject>
+    <RootNamespace>Maze_Game_Example</RootNamespace>
+    <AssemblyName>Maze Game Example</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Maze Game Example.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Maze Game Example.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cheats.Designer.vb">
+      <DependentUpon>Cheats.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cheats.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelpScreen.Designer.vb">
+      <DependentUpon>HelpScreen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HelpScreen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Highscores.Designer.vb">
+      <DependentUpon>Highscores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Highscores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="NameChanging.Designer.vb">
+      <DependentUpon>NameChanging.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NameChanging.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WelcomeScreen.Designer.vb">
+      <DependentUpon>WelcomeScreen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WelcomeScreen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="winfail.Designer.vb">
+      <DependentUpon>winfail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="winfail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Cheats.resx">
+      <DependentUpon>Cheats.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelpScreen.resx">
+      <DependentUpon>HelpScreen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Highscores.resx">
+      <DependentUpon>Highscores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NameChanging.resx">
+      <DependentUpon>NameChanging.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WelcomeScreen.resx">
+      <DependentUpon>WelcomeScreen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="winfail.resx">
+      <DependentUpon>winfail.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Player- Front.gif" />
+    <Content Include="Player- Left.gif" />
+    <Content Include="Player- Right.gif" />
+    <None Include="Resources\Treasure.gif" />
+    <None Include="Resources\Coin.gif" />
+    <Content Include="Resources\wil8.wav" />
+    <None Include="Resources\cheat.jpg" />
+    <None Include="Resources\Exit Img0.png" />
+    <None Include="Resources\Exit Gif.gif" />
+    <None Include="Resources\WallSprite.png" />
+    <None Include="Resources\Enemy-Back.png" />
+    <None Include="Resources\Enemy-Forward.png" />
+    <None Include="Resources\Enemy-Left.png" />
+    <None Include="Resources\Enemy-Right.png" />
+    <None Include="Resources\Enemy-RunLeft.png" />
+    <None Include="Resources\Enemy-RunRight.png" />
+    <None Include="Resources\HelpScreen.png" />
+    <None Include="Resources\PlayButtonSprite.png" />
+    <None Include="Resources\Player- BackWalk.gif" />
+    <None Include="Resources\Player- Front.gif" />
+    <None Include="Resources\Player- Front.png" />
+    <None Include="Resources\Player- FrontStill.png" />
+    <None Include="Resources\Player- Left.gif" />
+    <None Include="Resources\Player- Right.gif" />
+    <None Include="Resources\SunSprite.png" />
+    <None Include="Resources\WallSprite - Open Bottom.png" />
+    <None Include="Resources\WallSprite - Open Top.png" />
+    <None Include="Resources\WallSprite Horizonta - Open Bottom.png" />
+    <None Include="Resources\WallSprite Horizonta - Open Top.png" />
+    <None Include="Resources\WallSprite Horizontal.png" />
+    <None Include="Resources\w640.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
