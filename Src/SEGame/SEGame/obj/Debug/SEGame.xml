@@ -19,11 +19,7 @@ SEGame
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
-</member><member name="P:SEGame.My.Resources.Resources.EVSHAFT">
-	<summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
-</summary>
-</member><member name="P:SEGame.My.Resources.Resources.EVSHAFT1">
+</member><member name="P:SEGame.My.Resources.Resources.Idle">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
@@ -31,11 +27,7 @@ SEGame
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
-</member><member name="P:SEGame.My.Resources.Resources.space_desk_office_workspace">
-	<summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
-</summary>
-</member><member name="P:SEGame.My.Resources.Resources.space_desk_office_workspace1">
+</member><member name="P:SEGame.My.Resources.Resources.Shooting">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

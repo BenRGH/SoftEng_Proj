@@ -26,6 +26,10 @@ Partial Class Options
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.speedNew = New System.Windows.Forms.NumericUpDown()
+        Me.saveBtn = New System.Windows.Forms.Button()
+        CType(Me.speedNew, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -65,17 +69,49 @@ Partial Class Options
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "bonus multiplier"
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(67, 193)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(38, 13)
+        Me.Label5.TabIndex = 4
+        Me.Label5.Text = "Speed"
+        '
+        'speedNew
+        '
+        Me.speedNew.Location = New System.Drawing.Point(151, 193)
+        Me.speedNew.Maximum = New Decimal(New Integer() {5, 0, 0, 0})
+        Me.speedNew.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.speedNew.Name = "speedNew"
+        Me.speedNew.Size = New System.Drawing.Size(120, 20)
+        Me.speedNew.TabIndex = 5
+        Me.speedNew.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
+        'saveBtn
+        '
+        Me.saveBtn.Location = New System.Drawing.Point(12, 373)
+        Me.saveBtn.Name = "saveBtn"
+        Me.saveBtn.Size = New System.Drawing.Size(275, 49)
+        Me.saveBtn.TabIndex = 6
+        Me.saveBtn.Text = "Save"
+        Me.saveBtn.UseVisualStyleBackColor = True
+        '
         'Options
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(299, 436)
+        Me.Controls.Add(Me.saveBtn)
+        Me.Controls.Add(Me.speedNew)
+        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Name = "Options"
         Me.Text = "Options"
+        CType(Me.speedNew, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -84,4 +120,7 @@ Partial Class Options
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents speedNew As System.Windows.Forms.NumericUpDown
+    Friend WithEvents saveBtn As System.Windows.Forms.Button
 End Class

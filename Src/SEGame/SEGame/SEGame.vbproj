@@ -70,11 +70,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Main.vb">
+    <Compile Include="Menu.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main.Designer.vb">
-      <DependentUpon>Main.vb</DependentUpon>
+    <Compile Include="Menu.Designer.vb">
+      <DependentUpon>Menu.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Game.Designer.vb">
@@ -112,8 +112,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Main.resx">
-      <DependentUpon>Main.vb</DependentUpon>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Game.resx">
       <DependentUpon>Game.vb</DependentUpon>
@@ -154,6 +154,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="enemy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Idle.gif" />
+    <None Include="Resources\Shooting.gif" />
+    <None Include="Resources\Idle.gif" />
+    <Content Include="Shooting.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

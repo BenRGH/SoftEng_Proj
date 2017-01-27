@@ -23,11 +23,8 @@ Partial Class Game
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.character = New System.Windows.Forms.PictureBox()
         Me.nickLabel = New System.Windows.Forms.Label()
         Me.worldTimer = New System.Windows.Forms.Timer(Me.components)
         Me.charMovTimer_up = New System.Windows.Forms.Timer(Me.components)
@@ -35,28 +32,13 @@ Partial Class Game
         Me.charMovTimer_left = New System.Windows.Forms.Timer(Me.components)
         Me.charMovTimer_right = New System.Windows.Forms.Timer(Me.components)
         Me.debugBox = New System.Windows.Forms.TextBox()
+        Me.character = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        CType(Me.character, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.character, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Black
-        Me.PictureBox1.Location = New System.Drawing.Point(95, -1)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(14, 447)
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.BackColor = System.Drawing.Color.White
-        Me.PictureBox2.Location = New System.Drawing.Point(-2, -1)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(111, 621)
-        Me.PictureBox2.TabIndex = 1
-        Me.PictureBox2.TabStop = False
         '
         'Button1
         '
@@ -76,16 +58,6 @@ Partial Class Game
         Me.Button2.Text = "Pause"
         Me.Button2.UseVisualStyleBackColor = True
         '
-        'character
-        '
-        Me.character.BackgroundImage = Global.SEGame.My.Resources.Resources.player
-        Me.character.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.character.Location = New System.Drawing.Point(22, 485)
-        Me.character.Name = "character"
-        Me.character.Size = New System.Drawing.Size(68, 110)
-        Me.character.TabIndex = 10
-        Me.character.TabStop = False
-        '
         'nickLabel
         '
         Me.nickLabel.AutoSize = True
@@ -103,15 +75,19 @@ Partial Class Game
         '
         'charMovTimer_up
         '
+        Me.charMovTimer_up.Interval = 10
         '
         'charMovTimer_down
         '
+        Me.charMovTimer_down.Interval = 10
         '
         'charMovTimer_left
         '
+        Me.charMovTimer_left.Interval = 10
         '
         'charMovTimer_right
         '
+        Me.charMovTimer_right.Interval = 10
         '
         'debugBox
         '
@@ -121,6 +97,35 @@ Partial Class Game
         Me.debugBox.Size = New System.Drawing.Size(284, 47)
         Me.debugBox.TabIndex = 12
         '
+        'character
+        '
+        Me.character.BackColor = System.Drawing.Color.Transparent
+        Me.character.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.character.Image = Global.SEGame.My.Resources.Resources.Idle
+        Me.character.Location = New System.Drawing.Point(22, 485)
+        Me.character.Name = "character"
+        Me.character.Size = New System.Drawing.Size(50, 50)
+        Me.character.TabIndex = 10
+        Me.character.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Black
+        Me.PictureBox1.Location = New System.Drawing.Point(95, -1)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(14, 447)
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackColor = System.Drawing.Color.White
+        Me.PictureBox2.Location = New System.Drawing.Point(-2, -1)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(111, 621)
+        Me.PictureBox2.TabIndex = 1
+        Me.PictureBox2.TabStop = False
+        '
         'Game
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -128,9 +133,9 @@ Partial Class Game
         Me.BackColor = System.Drawing.Color.DimGray
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(856, 607)
+        Me.Controls.Add(Me.character)
         Me.Controls.Add(Me.debugBox)
         Me.Controls.Add(Me.nickLabel)
-        Me.Controls.Add(Me.character)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.PictureBox1)
@@ -138,9 +143,9 @@ Partial Class Game
         Me.KeyPreview = True
         Me.Name = "Game"
         Me.Text = "Game"
+        CType(Me.character, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.character, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

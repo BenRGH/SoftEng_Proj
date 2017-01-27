@@ -1,4 +1,6 @@
 ﻿Public Class Game
+    'Globals
+    Public speed As Integer = 1
     'World
     Dim level As Integer = 0
     Dim i As Integer = 0
@@ -73,27 +75,62 @@
     End Sub
     'Movement UP steps
     Private Sub charMovTimer_up_Tick(sender As Object, e As EventArgs) Handles charMovTimer_up.Tick
-        'Debug stuff
-        i += 1
-
-        debugBox.Text = "upping " + i.ToString()
+        If boundCheck("up") Then
+            character.Top -= speed
+        End If
     End Sub
     'Movement DOWN steps
     Private Sub charMovTimer_down_Tick(sender As Object, e As EventArgs) Handles charMovTimer_down.Tick
-        i += 1
-
-        debugBox.Text = "downing " + i.ToString()
+        If boundCheck("down") Then
+            character.Top += speed
+        End If
     End Sub
     'Movement LEFT steps
     Private Sub charMovTimer_left_Tick(sender As Object, e As EventArgs) Handles charMovTimer_left.Tick
-        i += 1
-
-        debugBox.Text = "lefting " + i.ToString()
+        If boundCheck("left") Then
+            character.Left -= speed
+        End If
     End Sub
     'Movement RIGHT steps
     Private Sub charMovTimer_right_Tick(sender As Object, e As EventArgs) Handles charMovTimer_right.Tick
-        i += 1
+        If boundCheck("right") Then
+            character.Left += speed
+        End If
+    End Sub
+    'Check if character outside allowed zone
+    Private Function boundCheck(direction As String)
+        Dim canMove As Boolean = False
 
-        debugBox.Text = "righting " + i.ToString()
+        If direction = "up" Then
+            If character.Top > 430 Then
+                canMove = True
+
+            End If
+
+        ElseIf direction = "down" Then
+            If character.Bottom < 605 Then
+                canMove = True
+
+            End If
+
+        ElseIf direction = "left" Then
+            If character.Left > 1 Then
+                canMove = True
+
+            End If
+
+        ElseIf direction = "right" Then
+            If character.Right < 100 Then
+                canMove = True
+
+            End If
+
+        End If
+
+        Return canMove
+    End Function
+    'Level load
+    Private Sub loadLevel(level As Integer)
+
     End Sub
 End Class
