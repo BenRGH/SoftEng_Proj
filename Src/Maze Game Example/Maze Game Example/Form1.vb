@@ -6,7 +6,7 @@
     Dim Score As Integer = 0
     Dim FloatPosVal As Integer = 20
 
-    'Character Images - These would normally use My.Resources.'Imagename' but VS is buggy
+    'Character Images
     Dim CharLeft As Image = My.Resources.Player__Left
     Dim CharRight As Image = My.Resources.Player__Right
     Dim CharDown As Image = My.Resources.Player__Front

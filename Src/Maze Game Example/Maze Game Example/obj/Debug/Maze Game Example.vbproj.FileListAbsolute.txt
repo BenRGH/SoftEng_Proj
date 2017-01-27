@@ -49,3 +49,7 @@ C:\Users\Ben\Downloads\Maze Game Example\Maze Game Example\obj\Debug\Maze_Game_E
 C:\Users\Ben\Downloads\Maze Game Example\Maze Game Example\obj\Debug\Maze_Game_Example.WelcomeScreen.resources
 C:\Users\Ben\Downloads\Maze Game Example\Maze Game Example\obj\Debug\Maze_Game_Example.WinFail.resources
 C:\Users\Ben\Downloads\Maze Game Example\Maze Game Example\obj\Debug\Maze Game Example.vbproj.GenerateResource.Cache
+C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\Maze Game Example\Maze Game Example\bin\Debug\Maze Game Example.exe.config
+C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\Maze Game Example\Maze Game Example\obj\Debug\Maze Game Example.exe
+C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\Maze Game Example\Maze Game Example\obj\Debug\Maze Game Example.xml
+C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\Maze Game Example\Maze Game Example\obj\Debug\Maze Game Example.pdb
