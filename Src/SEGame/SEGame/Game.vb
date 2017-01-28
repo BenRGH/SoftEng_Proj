@@ -4,11 +4,14 @@
     'World
     Dim level As Integer = 0
     Dim timeIndi As Integer = 0
+    Dim paused As Boolean = False
+    Public ended As Boolean = False 'Used for the score form
 
     'Character
     Dim nick As String
         'The area the character can move in
     Dim movBounds = New Integer(3, 1) {{-20, 430}, {200, 430}, {-20, 605}, {200, 605}}
+    Dim health As Integer = 100
 
     'Load window
     Private Sub Game_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -36,20 +39,23 @@
     End Sub
     'Keypresses
     Private Sub Game_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        'Is the game paused?
+        If Not paused Then
+            'Check input keypress
+            If e.KeyCode = Keys.W Then
+                charMovTimer_up.Enabled = True
+                charMovTimer_down.Enabled = False 'Turn off the gravity
 
-        'Check input keypress
-        If e.KeyCode = Keys.W Then
-            charMovTimer_up.Enabled = True
+            ElseIf e.KeyCode = Keys.A Then
+                charMovTimer_left.Enabled = True
 
-        ElseIf e.KeyCode = Keys.A Then
-            charMovTimer_left.Enabled = True
+            ElseIf e.KeyCode = Keys.S Then
+                charMovTimer_down.Enabled = True
 
-        ElseIf e.KeyCode = Keys.S Then
-            charMovTimer_down.Enabled = True
+            ElseIf e.KeyCode = Keys.D Then
+                charMovTimer_right.Enabled = True
 
-        ElseIf e.KeyCode = Keys.D Then
-            charMovTimer_right.Enabled = True
-
+            End If
         End If
 
     End Sub
@@ -59,6 +65,7 @@
         'Check key ups (when the key is released)
         If e.KeyCode = Keys.W Then
             charMovTimer_up.Enabled = False
+            charMovTimer_down.Enabled = True 'Gravity
 
         ElseIf e.KeyCode = Keys.A Then
             charMovTimer_left.Enabled = False
@@ -85,10 +92,24 @@
         Dim realTimeIndi As Integer = timeIndi / 50
         timeIndicator.Text = realTimeIndi
 
+        'Health bar update
+        healthBar.Width = 477 * (health / 100) 'Sets the healthbar width to the health percentage of the default width 477
+
+        'Test for end game
+        If health = 0 Then
+            endGame()
+            paused = True
+        End If
+
+        'Paused
+        If paused Then
+            worldTimer.Enabled = False
+        End If
 
         'Debug only
         debugBox.Visible = My.Settings.debugMode
         boundBoxOutline.Visible = My.Settings.debugMode
+        damageDebug.Visible = My.Settings.debugMode
     End Sub
     'Movement UP steps
     Private Sub charMovTimer_up_Tick(sender As Object, e As EventArgs) Handles charMovTimer_up.Tick
@@ -158,4 +179,41 @@
     Private Sub loadLevel(level As Integer)
         'do 
     End Sub
+    'Debug damage button
+    Private Sub damageDebug_Click(sender As Object, e As EventArgs) Handles damageDebug.Click
+        'Pressing this damages the character by a set number of points
+        health -= 10
+    End Sub
+    'Endgame
+    Private Sub endGame()
+        ended = True
+
+        'Open highscores window
+        Dim hScores As Score
+        hScores = New Score()
+        hScores.Show()
+        hScores = Nothing
+
+
+    End Sub
+    'Shoot - mouse click
+    Private Sub Game_MouseClick(sender As Object, e As MouseEventArgs) Handles Me.MouseClick
+        debugBox.Text = getMousePos().ToString()
+
+        'Find the pos along a line between two points
+        '<------------------------DO THIS------------------------------->
+        'x = (x0 + x1) / 2
+        'y = (y0 + y1) / 2
+
+        '*0.1 ...1 instead of / 2
+
+        'Used to aim projectiles
+
+
+    End Sub
+    'Gets mouse current location
+    Private Function getMousePos() As Point
+        getMousePos = Me.PointToClient(Windows.Forms.Cursor.Position)
+        Return getMousePos
+    End Function
 End Class

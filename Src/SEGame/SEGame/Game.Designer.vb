@@ -36,8 +36,15 @@ Partial Class Game
         Me.boundBoxOutline = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.timeIndicator = New System.Windows.Forms.TextBox()
+        Me.healthGroupBox = New System.Windows.Forms.GroupBox()
+        Me.healthBar = New System.Windows.Forms.PictureBox()
+        Me.damageDebug = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.character, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.boundBoxOutline, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.healthGroupBox.SuspendLayout()
+        CType(Me.healthBar, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button1
@@ -136,6 +143,44 @@ Partial Class Game
         Me.timeIndicator.Size = New System.Drawing.Size(38, 20)
         Me.timeIndicator.TabIndex = 15
         '
+        'healthGroupBox
+        '
+        Me.healthGroupBox.BackColor = System.Drawing.Color.Transparent
+        Me.healthGroupBox.Controls.Add(Me.healthBar)
+        Me.healthGroupBox.ForeColor = System.Drawing.Color.Maroon
+        Me.healthGroupBox.Location = New System.Drawing.Point(40, 13)
+        Me.healthGroupBox.Name = "healthGroupBox"
+        Me.healthGroupBox.Size = New System.Drawing.Size(475, 22)
+        Me.healthGroupBox.TabIndex = 16
+        Me.healthGroupBox.TabStop = False
+        Me.healthGroupBox.Text = "Health"
+        '
+        'healthBar
+        '
+        Me.healthBar.BackColor = System.Drawing.Color.Maroon
+        Me.healthBar.Location = New System.Drawing.Point(0, 12)
+        Me.healthBar.Name = "healthBar"
+        Me.healthBar.Size = New System.Drawing.Size(477, 10)
+        Me.healthBar.TabIndex = 0
+        Me.healthBar.TabStop = False
+        '
+        'damageDebug
+        '
+        Me.damageDebug.Location = New System.Drawing.Point(275, 219)
+        Me.damageDebug.Name = "damageDebug"
+        Me.damageDebug.Size = New System.Drawing.Size(75, 23)
+        Me.damageDebug.TabIndex = 17
+        Me.damageDebug.Text = "damage"
+        Me.damageDebug.UseVisualStyleBackColor = True
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Location = New System.Drawing.Point(350, 321)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(30, 27)
+        Me.PictureBox1.TabIndex = 18
+        Me.PictureBox1.TabStop = False
+        '
         'Game
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -144,6 +189,9 @@ Partial Class Game
         Me.BackgroundImage = Global.SEGame.My.Resources.Resources.Background
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(856, 607)
+        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.damageDebug)
+        Me.Controls.Add(Me.healthGroupBox)
         Me.Controls.Add(Me.timeIndicator)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.nickLabel)
@@ -154,10 +202,15 @@ Partial Class Game
         Me.Controls.Add(Me.Button1)
         Me.DoubleBuffered = True
         Me.KeyPreview = True
+        Me.MaximumSize = New System.Drawing.Size(872, 646)
+        Me.MinimumSize = New System.Drawing.Size(872, 646)
         Me.Name = "Game"
         Me.Text = "Game"
         CType(Me.character, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.boundBoxOutline, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.healthGroupBox.ResumeLayout(False)
+        CType(Me.healthBar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -175,4 +228,8 @@ Partial Class Game
     Friend WithEvents boundBoxOutline As System.Windows.Forms.PictureBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents timeIndicator As System.Windows.Forms.TextBox
+    Friend WithEvents healthGroupBox As System.Windows.Forms.GroupBox
+    Friend WithEvents healthBar As System.Windows.Forms.PictureBox
+    Friend WithEvents damageDebug As System.Windows.Forms.Button
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
 End Class
