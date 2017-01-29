@@ -17,12 +17,21 @@
     Private Sub Game_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'level = level save?
         worldTimer.Enabled = True
+        charMovTimer_down.Enabled = True
 
         'This box is to show what the bounding area looks like while debugging
         boundBoxOutline.Top = movBounds(0, 1)
         boundBoxOutline.Left = movBounds(0, 0)
         boundBoxOutline.Height = movBounds(2, 1) - movBounds(0, 1) 'lowest point - highest point = height
         boundBoxOutline.Width = movBounds(1, 0) - movBounds(0, 0) 'rightest point - leftest point = width
+
+        'Make the pause window the right size, by default it's small so it's not in the way
+        pauseScreen.Width = 872
+        pauseScreen.Height = 606
+        pauseScreen.Top = 40
+        pauseScreen.Left = 0
+        pauseScreen.Visible = False
+        pausedLbl.Visible = False
 
     End Sub
     'Close game window
@@ -209,6 +218,16 @@
 
         'Used to aim projectiles
 
+        projectileBox.Visible = True
+        projectileBox.Left = character.Right
+        projectileBox.Top = character.Top + (character.Height / 2)
+
+        shootTimer.Enabled = True
+
+
+    End Sub
+    'Projectile movement
+    Private Sub shootTimer_Tick(sender As Object, e As EventArgs) Handles shootTimer.Tick
 
     End Sub
     'Gets mouse current location
@@ -216,4 +235,34 @@
         getMousePos = Me.PointToClient(Windows.Forms.Cursor.Position)
         Return getMousePos
     End Function
+    'Pause button
+    Private Sub pause(sender As Object, e As EventArgs) Handles pauseBtn.Click
+        If paused Then 'If the game is already paused then unpause
+            paused = False
+            pauseBtn.Text = "Pause"
+            pauseBtn.BackColor = Color.MistyRose
+            pauseScreen.Visible = False 'Hide pause screen
+            pausedLbl.Visible = False
+        Else
+            paused = True 'If the game isn't paused then pause
+            pauseBtn.Text = "Resume"
+            pauseBtn.BackColor = Color.DarkTurquoise
+            pauseScreen.Visible = True
+            pausedLbl.Visible = True
+        End If
+
+
+
+    End Sub
+End Class
+
+'Projectile class
+Public Class Projectile
+    Dim speed As Integer
+    Dim dmg As Integer
+
+    Sub New(ByVal speedNew As Integer, ByVal dmgNew As Integer)
+        speed = speedNew
+        dmg = dmgNew
+    End Sub
 End Class
