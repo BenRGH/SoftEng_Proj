@@ -151,6 +151,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Background.png" />
+    <None Include="Resources\Backwards.gif" />
+    <None Include="Resources\Foward.gif" />
+    <None Include="Resources\Background.gif" />
     <Content Include="Resources\Idle.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

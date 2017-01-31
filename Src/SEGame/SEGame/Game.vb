@@ -12,6 +12,7 @@
         'The area the character can move in
     Dim movBounds = New Integer(3, 1) {{-20, 430}, {200, 430}, {-20, 605}, {200, 605}}
     Dim health As Integer = 100
+    Dim animated As Boolean = False
 
     'Load window
     Private Sub Game_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -55,13 +56,22 @@
                 charMovTimer_up.Enabled = True
                 charMovTimer_down.Enabled = False 'Turn off the gravity
 
+
             ElseIf e.KeyCode = Keys.A Then
+                If Not animated Then
+                    character.Image = My.Resources.Backwards 'Change animation
+                    animated = True 'Stops the character image constantly being set
+                End If
                 charMovTimer_left.Enabled = True
 
             ElseIf e.KeyCode = Keys.S Then
                 charMovTimer_down.Enabled = True
 
             ElseIf e.KeyCode = Keys.D Then
+                If Not animated Then
+                    character.Image = My.Resources.Foward 'Change animation
+                    animated = True
+                End If
                 charMovTimer_right.Enabled = True
 
             End If
@@ -78,12 +88,16 @@
 
         ElseIf e.KeyCode = Keys.A Then
             charMovTimer_left.Enabled = False
+            character.Image = My.Resources.Idle 'Change animation
+            animated = False
 
         ElseIf e.KeyCode = Keys.S Then
             charMovTimer_down.Enabled = False
 
         ElseIf e.KeyCode = Keys.D Then
             charMovTimer_right.Enabled = False
+            character.Image = My.Resources.Idle
+            animated = False
 
         End If
 
@@ -218,16 +232,23 @@
 
         'Used to aim projectiles
 
-        projectileBox.Visible = True
-        projectileBox.Left = character.Right
-        projectileBox.Top = character.Top + (character.Height / 2)
 
-        shootTimer.Enabled = True
-
+        'Shooting
+        If timeIndi Mod 2 = 0 Then 'reload delay - IMPROVE THIS!
+            projectileBox.Left = character.Right
+            projectileBox.Top = character.Top + (character.Height / 2)
+            projectileBox.Visible = True
+            shootTimer.Enabled = True
+        End If
 
     End Sub
     'Projectile movement
     Private Sub shootTimer_Tick(sender As Object, e As EventArgs) Handles shootTimer.Tick
+        If projectileBox.Left >= Me.Width Then
+            shootTimer.Enabled = False 'Stop moving once it's further than the edge of the window
+        Else
+            projectileBox.Left += 10 'Change this for the speed of projectile
+        End If
 
     End Sub
     'Gets mouse current location

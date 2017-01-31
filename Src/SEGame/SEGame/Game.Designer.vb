@@ -23,6 +23,7 @@ Partial Class Game
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Game))
         Me.Button1 = New System.Windows.Forms.Button()
         Me.pauseBtn = New System.Windows.Forms.Button()
         Me.nickLabel = New System.Windows.Forms.Label()
@@ -44,6 +45,7 @@ Partial Class Game
         Me.pausedLbl = New System.Windows.Forms.Label()
         Me.projectileBox = New System.Windows.Forms.PictureBox()
         Me.shootTimer = New System.Windows.Forms.Timer(Me.components)
+        Me.reloadTimer = New System.Windows.Forms.Timer(Me.components)
         CType(Me.character, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.boundBoxOutline, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.healthGroupBox.SuspendLayout()
@@ -225,12 +227,16 @@ Partial Class Game
         '
         Me.shootTimer.Interval = 1
         '
+        'reloadTimer
+        '
+        Me.reloadTimer.Interval = 1
+        '
         'Game
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DimGray
-        Me.BackgroundImage = Global.SEGame.My.Resources.Resources.Background
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(856, 607)
         Me.Controls.Add(Me.projectileBox)
@@ -285,4 +291,5 @@ Partial Class Game
     Friend WithEvents pausedLbl As System.Windows.Forms.Label
     Friend WithEvents projectileBox As System.Windows.Forms.PictureBox
     Friend WithEvents shootTimer As System.Windows.Forms.Timer
+    Friend WithEvents reloadTimer As System.Windows.Forms.Timer
 End Class

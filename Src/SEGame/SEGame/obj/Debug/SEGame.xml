@@ -19,7 +19,15 @@ SEGame
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
+</member><member name="P:SEGame.My.Resources.Resources.Backwards">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
 </member><member name="P:SEGame.My.Resources.Resources.enemy">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SEGame.My.Resources.Resources.Foward">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
