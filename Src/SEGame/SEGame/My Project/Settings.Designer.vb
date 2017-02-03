@@ -54,27 +54,49 @@ Namespace My
             End Get
         End Property
         
-        <Global.System.Configuration.UserScopedSettingAttribute(), _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.Configuration.DefaultSettingValueAttribute("False")> _
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
         Public Property debugMode() As Boolean
             Get
-                Return CType(Me("debugMode"), Boolean)
+                Return CType(Me("debugMode"),Boolean)
             End Get
-            Set(value As Boolean)
+            Set
                 Me("debugMode") = value
             End Set
         End Property
-
-        <Global.System.Configuration.UserScopedSettingAttribute(), _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.Configuration.DefaultSettingValueAttribute("1")> _
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("1")>  _
         Public Property speed() As Integer
             Get
-                Return CType(Me("speed"), Integer)
+                Return CType(Me("speed"),Integer)
             End Get
-            Set(value As Integer)
+            Set
                 Me("speed") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\ScoreDB.mdb")>  _
+        Public ReadOnly Property ScoreDBConnectionString() As String
+            Get
+                Return CType(Me("ScoreDBConnectionString"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property currentScore() As Integer
+            Get
+                Return CType(Me("currentScore"),Integer)
+            End Get
+            Set
+                Me("currentScore") = value
             End Set
         End Property
     End Class

@@ -1,9 +1,9 @@
 ﻿Public Class Game
-    'Globals
+    'Vars
 
     'World
-    Dim level As Integer = 0
-    Dim timeIndi As Integer = 0
+    Dim level As Integer = 0 'WIP
+    Dim timeIndi As Integer = 0 'The clock in the top right
     Dim paused As Boolean = False
     Public ended As Boolean = False 'Used for the score form
 
@@ -34,9 +34,13 @@
         pauseScreen.Visible = False
         pausedLbl.Visible = False
 
+        'Enemy starting pos
+        enemy1.Left = Me.Right
+
+
     End Sub
     'Close game window
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub exitBtn_click(sender As Object, e As EventArgs) Handles exitBtn.Click
         Me.Close() 'Closes this form
 
         'Stop and clear all timers
@@ -64,9 +68,6 @@
                 End If
                 charMovTimer_left.Enabled = True
 
-            ElseIf e.KeyCode = Keys.S Then
-                charMovTimer_down.Enabled = True
-
             ElseIf e.KeyCode = Keys.D Then
                 If Not animated Then
                     character.Image = My.Resources.Foward 'Change animation
@@ -90,9 +91,6 @@
             charMovTimer_left.Enabled = False
             character.Image = My.Resources.Idle 'Change animation
             animated = False
-
-        ElseIf e.KeyCode = Keys.S Then
-            charMovTimer_down.Enabled = False
 
         ElseIf e.KeyCode = Keys.D Then
             charMovTimer_right.Enabled = False
@@ -124,10 +122,8 @@
             paused = True
         End If
 
-        'Paused
-        If paused Then
-            worldTimer.Enabled = False
-        End If
+        'Score update
+        My.Settings.currentScore = realTimeIndi 'Add enemy kills to this!
 
         'Debug only
         debugBox.Visible = My.Settings.debugMode
@@ -145,7 +141,9 @@
     'Movement DOWN steps
     Private Sub charMovTimer_down_Tick(sender As Object, e As EventArgs) Handles charMovTimer_down.Tick
         If boundCheck("down") Then
-            character.Top += My.Settings.speed
+            If Not paused Then 'movement only when the game is not paused
+                character.Top += My.Settings.speed
+            End If
         End If
 
         debugBox.Text = "downing"
@@ -217,6 +215,7 @@
         hScores.Show()
         hScores = Nothing
 
+        Me.Close() 'Close this window - Game over
 
     End Sub
     'Shoot - mouse click
@@ -251,7 +250,7 @@
         End If
 
     End Sub
-    'Gets mouse current location
+    'Gets mouse current location - WIP
     Private Function getMousePos() As Point
         getMousePos = Me.PointToClient(Windows.Forms.Cursor.Position)
         Return getMousePos
@@ -264,12 +263,16 @@
             pauseBtn.BackColor = Color.MistyRose
             pauseScreen.Visible = False 'Hide pause screen
             pausedLbl.Visible = False
+
+            worldTimer.Enabled = True 'Resumes running major code
         Else
             paused = True 'If the game isn't paused then pause
             pauseBtn.Text = "Resume"
             pauseBtn.BackColor = Color.DarkTurquoise
             pauseScreen.Visible = True
             pausedLbl.Visible = True
+
+            worldTimer.Enabled = False 'Stops major code
         End If
 
 
@@ -277,7 +280,7 @@
     End Sub
 End Class
 
-'Projectile class
+'Projectile class - MAJOR WIP
 Public Class Projectile
     Dim speed As Integer
     Dim dmg As Integer

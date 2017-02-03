@@ -77,6 +77,8 @@ Partial Class Menu
         Me.Controls.Add(Me.highBtn)
         Me.Controls.Add(Me.playBtn)
         Me.Controls.Add(Me.Label1)
+        Me.MaximumSize = New System.Drawing.Size(518, 355)
+        Me.MinimumSize = New System.Drawing.Size(518, 355)
         Me.Name = "Menu"
         Me.Text = "Game"
         Me.ResumeLayout(False)

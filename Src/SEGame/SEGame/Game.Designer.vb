@@ -24,7 +24,7 @@ Partial Class Game
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Game))
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.exitBtn = New System.Windows.Forms.Button()
         Me.pauseBtn = New System.Windows.Forms.Button()
         Me.nickLabel = New System.Windows.Forms.Label()
         Me.worldTimer = New System.Windows.Forms.Timer(Me.components)
@@ -46,6 +46,7 @@ Partial Class Game
         Me.projectileBox = New System.Windows.Forms.PictureBox()
         Me.shootTimer = New System.Windows.Forms.Timer(Me.components)
         Me.reloadTimer = New System.Windows.Forms.Timer(Me.components)
+        Me.enemy1 = New System.Windows.Forms.PictureBox()
         CType(Me.character, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.boundBoxOutline, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.healthGroupBox.SuspendLayout()
@@ -53,16 +54,17 @@ Partial Class Game
         CType(Me.pauseScreen, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.projectileBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.enemy1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Button1
+        'exitBtn
         '
-        Me.Button1.Location = New System.Drawing.Point(769, 12)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 8
-        Me.Button1.Text = "Exit"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.exitBtn.Location = New System.Drawing.Point(769, 12)
+        Me.exitBtn.Name = "exitBtn"
+        Me.exitBtn.Size = New System.Drawing.Size(75, 23)
+        Me.exitBtn.TabIndex = 8
+        Me.exitBtn.Text = "Exit"
+        Me.exitBtn.UseVisualStyleBackColor = True
         '
         'pauseBtn
         '
@@ -231,6 +233,16 @@ Partial Class Game
         '
         Me.reloadTimer.Interval = 1
         '
+        'enemy1
+        '
+        Me.enemy1.BackColor = System.Drawing.Color.Fuchsia
+        Me.enemy1.Location = New System.Drawing.Point(807, 532)
+        Me.enemy1.Name = "enemy1"
+        Me.enemy1.Size = New System.Drawing.Size(49, 53)
+        Me.enemy1.TabIndex = 22
+        Me.enemy1.TabStop = False
+        Me.enemy1.Visible = False
+        '
         'Game
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -239,9 +251,10 @@ Partial Class Game
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(856, 607)
+        Me.Controls.Add(Me.enemy1)
         Me.Controls.Add(Me.projectileBox)
         Me.Controls.Add(Me.pausedLbl)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.exitBtn)
         Me.Controls.Add(Me.pauseBtn)
         Me.Controls.Add(Me.pauseScreen)
         Me.Controls.Add(Me.damageDebug)
@@ -266,11 +279,12 @@ Partial Class Game
         CType(Me.pauseScreen, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.projectileBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.enemy1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents exitBtn As System.Windows.Forms.Button
     Friend WithEvents pauseBtn As System.Windows.Forms.Button
     Friend WithEvents character As System.Windows.Forms.PictureBox
     Friend WithEvents nickLabel As System.Windows.Forms.Label
@@ -292,4 +306,5 @@ Partial Class Game
     Friend WithEvents projectileBox As System.Windows.Forms.PictureBox
     Friend WithEvents shootTimer As System.Windows.Forms.Timer
     Friend WithEvents reloadTimer As System.Windows.Forms.Timer
+    Friend WithEvents enemy1 As System.Windows.Forms.PictureBox
 End Class

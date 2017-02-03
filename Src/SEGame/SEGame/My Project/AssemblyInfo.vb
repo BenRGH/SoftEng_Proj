@@ -9,13 +9,13 @@ Imports System.Runtime.InteropServices
 ' Review the values of the assembly attributes
 
 <Assembly: AssemblyTitle("SEGame")> 
-<Assembly: AssemblyDescription("")> 
+<Assembly: AssemblyDescription("Computer Game")> 
 <Assembly: AssemblyCompany("")> 
 <Assembly: AssemblyProduct("SEGame")> 
 <Assembly: AssemblyCopyright("Copyright ©  2017")> 
 <Assembly: AssemblyTrademark("")> 
 
-<Assembly: ComVisible(False)>
+<Assembly: ComVisible(True)> 
 
 'The following GUID is for the ID of the typelib if this project is exposed to COM
 <Assembly: Guid("2fe52355-1fcf-44d3-92b5-2e06446ac762")> 
