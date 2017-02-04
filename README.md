@@ -8,7 +8,7 @@ This was developed as a part of a University unit to demonstrate group work and 
 All code is written in Visual Basic, to view the source code open _"Src>SEGame>SEGame.sln"_ in Visual Studio, 
 or if you prefer, use your favourite editor to open the *.vb* files contained in the _"Src>SEGame>SEGame"_ directory.
 
-If you want to just play the game then you can find the most recent build in the *build* directory. !ADD THIS!
+If you want to just play the game then you can find the most recent build in the *build* directory.
 Controls are WASD and mouse left click.
 
 # Who?
