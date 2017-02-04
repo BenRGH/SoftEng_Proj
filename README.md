@@ -1,4 +1,5 @@
 # SoftEng_Team10A
+
 # Description
 This project is a computer game application, it's a 2D shooter with database score storing functionality.
 This was developed as a part of a University unit to demonstrate group work and software deployment.

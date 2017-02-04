@@ -10,9 +10,10 @@
     'Character
     Dim nick As String
         'The area the character can move in
-    Dim movBounds = New Integer(3, 1) {{-20, 430}, {200, 430}, {-20, 605}, {200, 605}}
+    Dim movBounds = New Integer(3, 1) {{-20, 430}, {200, 430}, {-20, 605}, {200, 605}} 'Each pair is a corner of the square
     Dim health As Integer = 100
     Dim animated As Boolean = False
+    Dim lastShotTime As Integer
 
     'Load window
     Private Sub Game_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -36,7 +37,7 @@
 
         'Enemy starting pos
         enemy1.Left = Me.Right
-
+        enemy1.Visible = True
 
     End Sub
     'Close game window
@@ -103,10 +104,6 @@
     'Global clock
     'This clock is used to update everything without a specific timer
     Private Sub worldTimer_Tick(sender As Object, e As EventArgs) Handles worldTimer.Tick
-
-        'Move the nickname label to follow the character
-        nickLabel.Top = character.Top - 19 'top left of screen is 0,0 so we '-' to go up
-        nickLabel.Left = character.Right - (nickLabel.Width / 2) - 50
 
         'Game time indicator
         timeIndi += 1
@@ -233,20 +230,27 @@
 
 
         'Shooting
-        If timeIndi Mod 2 = 0 Then 'reload delay - IMPROVE THIS!
+        If timeIndi >= lastShotTime + My.Settings.reloadSpeed Then 'This is the reload limit
             projectileBox.Left = character.Right
             projectileBox.Top = character.Top + (character.Height / 2)
             projectileBox.Visible = True
             shootTimer.Enabled = True
+            lastShotTime = timeIndi
         End If
-
+        
     End Sub
     'Projectile movement
     Private Sub shootTimer_Tick(sender As Object, e As EventArgs) Handles shootTimer.Tick
         If projectileBox.Left >= Me.Width Then
             shootTimer.Enabled = False 'Stop moving once it's further than the edge of the window
         Else
-            projectileBox.Left += 10 'Change this for the speed of projectile
+            projectileBox.Left += 20 'Change this for the speed of projectile
+        End If
+
+        If projectileBox.Bounds.IntersectsWith(enemy1.Bounds) Then '<----------Change specific enemy to enemy array!----------
+            'Kill the enemy
+            enemy1.Visible = False
+            enemyMoveTimer.Enabled = False
         End If
 
     End Sub
@@ -276,6 +280,17 @@
         End If
 
 
+
+    End Sub
+
+    Private Sub enemyMoveTimer_Tick(sender As Object, e As EventArgs) Handles enemyMoveTimer.Tick
+
+        'Movement
+        If enemy1.Left <= character.Right Then
+            health -= 1
+        Else
+            enemy1.Left -= My.Settings.enemySpeed
+        End If
 
     End Sub
 End Class

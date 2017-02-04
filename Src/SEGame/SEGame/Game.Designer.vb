@@ -26,7 +26,6 @@ Partial Class Game
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Game))
         Me.exitBtn = New System.Windows.Forms.Button()
         Me.pauseBtn = New System.Windows.Forms.Button()
-        Me.nickLabel = New System.Windows.Forms.Label()
         Me.worldTimer = New System.Windows.Forms.Timer(Me.components)
         Me.charMovTimer_up = New System.Windows.Forms.Timer(Me.components)
         Me.charMovTimer_down = New System.Windows.Forms.Timer(Me.components)
@@ -47,6 +46,7 @@ Partial Class Game
         Me.shootTimer = New System.Windows.Forms.Timer(Me.components)
         Me.reloadTimer = New System.Windows.Forms.Timer(Me.components)
         Me.enemy1 = New System.Windows.Forms.PictureBox()
+        Me.enemyMoveTimer = New System.Windows.Forms.Timer(Me.components)
         CType(Me.character, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.boundBoxOutline, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.healthGroupBox.SuspendLayout()
@@ -74,17 +74,6 @@ Partial Class Game
         Me.pauseBtn.TabIndex = 9
         Me.pauseBtn.Text = "Pause"
         Me.pauseBtn.UseVisualStyleBackColor = True
-        '
-        'nickLabel
-        '
-        Me.nickLabel.AutoSize = True
-        Me.nickLabel.BackColor = System.Drawing.Color.LightGreen
-        Me.nickLabel.ForeColor = System.Drawing.Color.DarkRed
-        Me.nickLabel.Location = New System.Drawing.Point(37, 469)
-        Me.nickLabel.Name = "nickLabel"
-        Me.nickLabel.Size = New System.Drawing.Size(39, 13)
-        Me.nickLabel.TabIndex = 11
-        Me.nickLabel.Text = "default"
         '
         'worldTimer
         '
@@ -241,7 +230,10 @@ Partial Class Game
         Me.enemy1.Size = New System.Drawing.Size(49, 53)
         Me.enemy1.TabIndex = 22
         Me.enemy1.TabStop = False
-        Me.enemy1.Visible = False
+        '
+        'enemyMoveTimer
+        '
+        Me.enemyMoveTimer.Enabled = True
         '
         'Game
         '
@@ -261,7 +253,6 @@ Partial Class Game
         Me.Controls.Add(Me.healthGroupBox)
         Me.Controls.Add(Me.timeIndicator)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.nickLabel)
         Me.Controls.Add(Me.character)
         Me.Controls.Add(Me.boundBoxOutline)
         Me.Controls.Add(Me.debugBox)
@@ -287,7 +278,6 @@ Partial Class Game
     Friend WithEvents exitBtn As System.Windows.Forms.Button
     Friend WithEvents pauseBtn As System.Windows.Forms.Button
     Friend WithEvents character As System.Windows.Forms.PictureBox
-    Friend WithEvents nickLabel As System.Windows.Forms.Label
     Friend WithEvents worldTimer As System.Windows.Forms.Timer
     Friend WithEvents debugBox As System.Windows.Forms.TextBox
     Friend WithEvents charMovTimer_up As System.Windows.Forms.Timer
@@ -307,4 +297,5 @@ Partial Class Game
     Friend WithEvents shootTimer As System.Windows.Forms.Timer
     Friend WithEvents reloadTimer As System.Windows.Forms.Timer
     Friend WithEvents enemy1 As System.Windows.Forms.PictureBox
+    Friend WithEvents enemyMoveTimer As System.Windows.Forms.Timer
 End Class

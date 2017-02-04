@@ -25,5 +25,3 @@ C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\SEGame\SEGame\obj\Debug\SEGame
 C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\SEGame\SEGame\obj\Debug\SEGame.vbproj.GenerateResource.Cache
 C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\SEGame\SEGame\obj\Debug\SEGame.Options.resources
 C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\SEGame\SEGame\bin\Debug\ScoreDB.mdb
-C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\SEGame\SEGame\bin\Debug\SEGame.exe.CodeAnalysisLog.xml
-C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\SEGame\SEGame\bin\Debug\SEGame.exe.lastcodeanalysissucceeded
