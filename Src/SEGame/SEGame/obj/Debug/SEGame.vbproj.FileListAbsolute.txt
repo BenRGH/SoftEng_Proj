@@ -11,17 +11,21 @@ c:\users\ben\documents\visual studio 2013\Projects\SEGame\SEGame\obj\Debug\SEGam
 c:\users\ben\documents\visual studio 2013\Projects\SEGame\SEGame\obj\Debug\SEGame.pdb
 C:\Users\Ben\documents\visual studio 2013\Projects\SEGame\SEGame\obj\Debug\SEGame.Score.resources
 C:\Users\Ben\documents\visual studio 2013\Projects\SEGame\SEGame\obj\Debug\SEGame.vbprojResolveAssemblyReference.cache
+C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\SEGame\SEGame\bin\Debug\ScoreDB.mdb
 C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\SEGame\SEGame\bin\Debug\SEGame.exe.config
-C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\SEGame\SEGame\obj\Debug\SEGame.exe
-C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\SEGame\SEGame\obj\Debug\SEGame.xml
-C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\SEGame\SEGame\obj\Debug\SEGame.pdb
+C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\SEGame\SEGame\bin\Debug\SEGame.exe.manifest
+C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\SEGame\SEGame\bin\Debug\SEGame.application
 C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\SEGame\SEGame\bin\Debug\SEGame.exe
 C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\SEGame\SEGame\bin\Debug\SEGame.pdb
 C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\SEGame\SEGame\bin\Debug\SEGame.xml
 C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\SEGame\SEGame\obj\Debug\SEGame.Menu.resources
 C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\SEGame\SEGame\obj\Debug\SEGame.Game.resources
 C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\SEGame\SEGame\obj\Debug\SEGame.Resources.resources
+C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\SEGame\SEGame\obj\Debug\SEGame.Options.resources
 C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\SEGame\SEGame\obj\Debug\SEGame.Score.resources
 C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\SEGame\SEGame\obj\Debug\SEGame.vbproj.GenerateResource.Cache
-C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\SEGame\SEGame\obj\Debug\SEGame.Options.resources
-C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\SEGame\SEGame\bin\Debug\ScoreDB.mdb
+C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\SEGame\SEGame\obj\Debug\SEGame.exe.manifest
+C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\SEGame\SEGame\obj\Debug\SEGame.application
+C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\SEGame\SEGame\obj\Debug\SEGame.exe
+C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\SEGame\SEGame\obj\Debug\SEGame.xml
+C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\SEGame\SEGame\obj\Debug\SEGame.pdb

@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="SEGame.exe" version="1.0.0.0" publicKeyToken="276a17562647d87b" language="en-GB" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="Logo.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="SEGame" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="SEGame.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!-- UAC Manifest Options
+            If you want to change the Windows User Account Control level replace the 
+            requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+            Specifying requestedExecutionLevel node will disable file and registry virtualization.
+            If you want to utilize File and Registry Virtualization for backward 
+            compatibility then delete the requestedExecutionLevel node.
+        -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SEGame.exe" size="203264">
+      <assemblyIdentity name="SEGame" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>qLd5xYGlDH0+Jb8l1Ok+poWLUsK49+AOeTetHvNE6so=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="Logo.ico" size="15086">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>TZ2zeEvEQdBYgySfNBlTkeYPL8KzSMToe2Y1ILNYZs8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\Idle.gif" size="23592">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>ESzvincmf65vaqpvtXB8dD8HXeoZtNvrfj3fnfBXS0w=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="ScoreDB.mdb" size="319488" writeableType="applicationData">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Zy8xtTQYBXICezTBLpknU3uXcRf8NVOPFn0Breq83xM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="SEGame.exe.config" size="1751">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>mdIxVCY8Uf3/qiZxqEei0oJmnScWxPNMX48/9BRZmQY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+    <application>
+      <!-- A list of all Windows versions that this application is designed to work with. 
+      Windows will automatically select the most compatible environment.-->
+      <!-- If your application is designed to work with Windows Vista, uncomment the following supportedOS node-->
+      <!--<supportedOS Id="{e2011457-1546-43c5-a5fe-008deee3d3f0}"></supportedOS>-->
+      <!-- If your application is designed to work with Windows 7, uncomment the following supportedOS node-->
+      <!--<supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}"/>-->
+      <!-- If your application is designed to work with Windows 8, uncomment the following supportedOS node-->
+      <!--<supportedOS Id="{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}"></supportedOS>-->
+      <!-- If your application is designed to work with Windows 8.1, uncomment the following supportedOS node-->
+      <!--<supportedOS Id="{1f676c76-80e1-4239-95bb-83d0f6d0da78}"/>-->
+    </application>
+  </compatibility>
+<publisherIdentity name="CN=DESKTOP-HVN2FOQ\Ben" issuerKeyHash="425d8b9a3e695ec9b2a144ef2ead792e8f1456aa" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>24wZbU9kBZMsjG+0OE+8vjkUlnBXsNEIFe7Tmg5YowY=</DigestValue></Reference></SignedInfo><SignatureValue>jddACu+JNkf/uF4PRns47OY1McwGMJgdCS2m71mXKbfj7iw623unxAizh6pPbXZ/JIEgWmoWo0aFycKeBNvN2EfqQLo/78G1b9Q2XA84H3hS1IhKjjNuY0eDrYKw2AiMCXRRIbvWW8qN/fU4vXR33FGcWzWSjeIDLlYduXijiJo=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>3AEN7Eck5lTqEPNniA5iRds/6BZ4d7xrZSoZOCNw2x7UZxcILVE5hReUdrcujFB5dOhKeFVQ4Y8yAMRzdFosVJtrieOhsJHBlcJR5Fvzwngy4xkWkU0PRGb75MsnkYiglKx6L6wHuIC1ZUIuBYzedYx9qHNA2k6Zs+FpE5Gn3cc=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="06a3580e9ad3ee1508d1b05770961439bebc4f38b46f8c2c9305644f6d198cdb" Description="" Url=""><as:assemblyIdentity name="SEGame.exe" version="1.0.0.0" publicKeyToken="276a17562647d87b" language="en-GB" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=DESKTOP-HVN2FOQ\Ben</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>vFyxWLYzaNHgynODtw4liV4m1uANlcMIe2kqpWc2XjA=</DigestValue></Reference></SignedInfo><SignatureValue>oiJzxHRDBf2LilrE/pGfaXX0FKeRxUXJjpOlQ1IDiqbaF696/5jGwjOOJQb1GNm3y0QRiC0Cw09GKgJFvO2jlAFDsajDEGVJ6g/8JdQbANy24XrViM5UA0/CezIEpSQ7sVAjkv/zwgTZL4SMNDf+aA9BKEIxMzfhXDgzrUhztvE=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>3AEN7Eck5lTqEPNniA5iRds/6BZ4d7xrZSoZOCNw2x7UZxcILVE5hReUdrcujFB5dOhKeFVQ4Y8yAMRzdFosVJtrieOhsJHBlcJR5Fvzwngy4xkWkU0PRGb75MsnkYiglKx6L6wHuIC1ZUIuBYzedYx9qHNA2k6Zs+FpE5Gn3cc=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB5TCCAU6gAwIBAgIQP3dEkH/Z7I1A3hz6ItvNrzANBgkqhkiG9w0BAQsFADAxMS8wLQYDVQQDHiYARABFAFMASwBUAE8AUAAtAEgAVgBOADIARgBPAFEAXABCAGUAbjAeFw0xNzAyMDQxMzI2MjRaFw0xODAyMDQxOTI2MjRaMDExLzAtBgNVBAMeJgBEAEUAUwBLAFQATwBQAC0ASABWAE4AMgBGAE8AUQBcAEIAZQBuMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDcAQ3sRyTmVOoQ82eIDmJF2z/oFnh3vGtlKhk4I3DbHtRnFwgtUTmFF5R2ty6MUHl06Ep4VVDhjzIAxHN0WixUm2uJ46GwkcGVwlHkW/PCeDLjGRaRTQ9EZvvkyyeRiKCUrHovrAe4gLVlQi4FjN51jH2oc0DaTpmz4WkTkafdxwIDAQABMA0GCSqGSIb3DQEBCwUAA4GBAFzVuboDgNpCRuM6dg6tgxjijrYbZJJevlNqPG78wz3GerbyMHO3wYeRbsmFAtS4PGDkbg//4uuGcOkyn6IHORFbfc0xMT4JIjt3MHEC8xBYp0+pmfCRHuKW/AOwdhzoElohw4VVWMFk0k0qM6LhSThb6ocefdlg/4ZUUrVMjQuf</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

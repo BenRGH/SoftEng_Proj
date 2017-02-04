@@ -14,6 +14,7 @@
     Dim health As Integer = 100
     Dim animated As Boolean = False
     Dim lastShotTime As Integer
+    Dim lastSpawnTime As Integer = 0
 
     'Load window
     Private Sub Game_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -109,6 +110,11 @@
         timeIndi += 1
         Dim realTimeIndi As Integer = timeIndi / 50
         timeIndicator.Text = realTimeIndi
+
+        If realTimeIndi >= lastSpawnTime + My.Settings.spawnRate And Not enemy1.Visible Then 'This allows enemies to respawn
+            enemyMoveTimer.Enabled = True
+            lastSpawnTime = realTimeIndi
+        End If
 
         'Health bar update
         healthBar.Width = 477 * (health / 100) 'Sets the healthbar width to the health percentage of the default width 477
@@ -251,6 +257,11 @@
             'Kill the enemy
             enemy1.Visible = False
             enemyMoveTimer.Enabled = False
+            enemy1.Left = Me.Right 'Push it back to where it started
+            'Hide the projectile
+            projectileBox.Visible = False
+
+
         End If
 
     End Sub
@@ -282,8 +293,9 @@
 
 
     End Sub
-
+    'Enemy timer
     Private Sub enemyMoveTimer_Tick(sender As Object, e As EventArgs) Handles enemyMoveTimer.Tick
+        enemy1.Visible = True '<-------------------------------Change this to array when implemented!
 
         'Movement
         If enemy1.Left <= character.Right Then

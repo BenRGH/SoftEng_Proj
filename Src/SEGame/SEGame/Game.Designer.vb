@@ -224,10 +224,12 @@ Partial Class Game
         '
         'enemy1
         '
-        Me.enemy1.BackColor = System.Drawing.Color.Fuchsia
-        Me.enemy1.Location = New System.Drawing.Point(807, 532)
+        Me.enemy1.BackColor = System.Drawing.Color.Transparent
+        Me.enemy1.Image = Global.SEGame.My.Resources.Resources.Skeleton
+        Me.enemy1.Location = New System.Drawing.Point(769, 509)
         Me.enemy1.Name = "enemy1"
-        Me.enemy1.Size = New System.Drawing.Size(49, 53)
+        Me.enemy1.Size = New System.Drawing.Size(87, 100)
+        Me.enemy1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.enemy1.TabIndex = 22
         Me.enemy1.TabStop = False
         '

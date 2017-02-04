@@ -123,6 +123,18 @@ Namespace My
                 Me("reloadSpeed") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("2")>  _
+        Public Property spawnRate() As Integer
+            Get
+                Return CType(Me("spawnRate"),Integer)
+            End Get
+            Set
+                Me("spawnRate") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
