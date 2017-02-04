@@ -99,6 +99,30 @@ Namespace My
                 Me("currentScore") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("5")>  _
+        Public Property enemySpeed() As Integer
+            Get
+                Return CType(Me("enemySpeed"),Integer)
+            End Get
+            Set
+                Me("enemySpeed") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("20")>  _
+        Public Property reloadSpeed() As Integer
+            Get
+                Return CType(Me("reloadSpeed"),Integer)
+            End Get
+            Set
+                Me("reloadSpeed") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
