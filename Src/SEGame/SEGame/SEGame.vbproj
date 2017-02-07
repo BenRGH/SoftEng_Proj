@@ -27,7 +27,7 @@
     <ProductName>SEGame</ProductName>
     <PublisherName>B.Rose</PublisherName>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationRevision>1</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -82,7 +82,8 @@
     <ManifestCertificateThumbprint>4F970BCC7A6CA22687524D74718BF04F41970E82</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>SEGame_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -213,6 +214,7 @@
   <ItemGroup>
     <Content Include="Logo.ico" />
     <None Include="Resources\Skeleton.gif" />
+    <None Include="Resources\376416__ehohnke__funk-lead-loop.wav" />
     <Content Include="ScoreDB.mdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

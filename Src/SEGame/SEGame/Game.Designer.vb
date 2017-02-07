@@ -245,12 +245,12 @@ Partial Class Game
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(856, 607)
+        Me.Controls.Add(Me.pauseScreen)
         Me.Controls.Add(Me.enemy1)
         Me.Controls.Add(Me.projectileBox)
         Me.Controls.Add(Me.pausedLbl)
         Me.Controls.Add(Me.exitBtn)
         Me.Controls.Add(Me.pauseBtn)
-        Me.Controls.Add(Me.pauseScreen)
         Me.Controls.Add(Me.damageDebug)
         Me.Controls.Add(Me.healthGroupBox)
         Me.Controls.Add(Me.timeIndicator)

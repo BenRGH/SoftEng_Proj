@@ -280,6 +280,7 @@
             pausedLbl.Visible = False
 
             worldTimer.Enabled = True 'Resumes running major code
+            enemyMoveTimer.Enabled = True
         Else
             paused = True 'If the game isn't paused then pause
             pauseBtn.Text = "Resume"
@@ -288,6 +289,7 @@
             pausedLbl.Visible = True
 
             worldTimer.Enabled = False 'Stops major code
+            enemyMoveTimer.Enabled = False
         End If
 
 

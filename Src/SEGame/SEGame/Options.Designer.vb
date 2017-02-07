@@ -32,9 +32,12 @@ Partial Class Options
         Me.enemySpeedNew = New System.Windows.Forms.NumericUpDown()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.reloadNew = New System.Windows.Forms.NumericUpDown()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.spawnRateNew = New System.Windows.Forms.NumericUpDown()
         CType(Me.speedNew, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.enemySpeedNew, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.reloadNew, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.spawnRateNew, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -130,11 +133,31 @@ Partial Class Options
         Me.reloadNew.TabIndex = 12
         Me.reloadNew.Value = New Decimal(New Integer() {20, 0, 0, 0})
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(19, 207)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(66, 13)
+        Me.Label4.TabIndex = 13
+        Me.Label4.Text = "Spawn Rate"
+        '
+        'spawnRateNew
+        '
+        Me.spawnRateNew.Enabled = False
+        Me.spawnRateNew.Location = New System.Drawing.Point(103, 207)
+        Me.spawnRateNew.Name = "spawnRateNew"
+        Me.spawnRateNew.Size = New System.Drawing.Size(120, 20)
+        Me.spawnRateNew.TabIndex = 14
+        Me.spawnRateNew.Value = New Decimal(New Integer() {2, 0, 0, 0})
+        '
         'Options
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(299, 436)
+        Me.Controls.Add(Me.spawnRateNew)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.reloadNew)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.enemySpeedNew)
@@ -150,6 +173,7 @@ Partial Class Options
         CType(Me.speedNew, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.enemySpeedNew, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.reloadNew, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.spawnRateNew, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -164,4 +188,6 @@ Partial Class Options
     Friend WithEvents enemySpeedNew As System.Windows.Forms.NumericUpDown
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents reloadNew As System.Windows.Forms.NumericUpDown
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents spawnRateNew As System.Windows.Forms.NumericUpDown
 End Class
