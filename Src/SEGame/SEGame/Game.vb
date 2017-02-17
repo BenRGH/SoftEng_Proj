@@ -1,5 +1,5 @@
-﻿Public Class Game
-    'Vars
+﻿Imports System.Threading
+Public Class Game
 
     'World
     Dim level As Integer = 0 'WIP
@@ -9,7 +9,7 @@
 
     'Character
     Dim nick As String
-        'The area the character can move in
+    'The area the character can move in
     Dim movBounds = New Integer(3, 1) {{-20, 430}, {200, 430}, {-20, 605}, {200, 605}} 'Each pair is a corner of the square
     Dim health As Integer = 100
     Dim animated As Boolean = False
@@ -242,8 +242,13 @@
             projectileBox.Visible = True
             shootTimer.Enabled = True
             lastShotTime = timeIndi
+
+            'Look like he's shooting
+            character.Image = My.Resources.Shooting
+            'Thread.Sleep(100)
+            'character.Image = My.Resources.Idle
         End If
-        
+
     End Sub
     'Projectile movement
     Private Sub shootTimer_Tick(sender As Object, e As EventArgs) Handles shootTimer.Tick
