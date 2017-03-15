@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SEGame.exe" size="5606360">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SEGame.exe" size="5596120">
       <assemblyIdentity name="SEGame" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>OAyIJpDoplbF1OZ+83gwZrjcFfw8yJf7rxrLOeh5l2M=</dsig:DigestValue>
+        <dsig:DigestValue>0C9IXaNUw2kb5eqaScnS7RMj1imi0AKjUbCej3i2jLo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

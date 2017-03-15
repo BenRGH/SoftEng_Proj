@@ -225,6 +225,7 @@
     <None Include="Resources\Bullet1.png" />
     <None Include="Resources\ControlScheme.png" />
     <None Include="Resources\Shooting.jpg" />
+    <None Include="Resources\Shooting.png" />
     <Content Include="ScoreDB.mdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
