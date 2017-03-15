@@ -130,7 +130,7 @@ Public Class Game
         'Score update
         My.Settings.currentScore = realTimeIndi - noKilled
 
-        If noKilled >= 5 Then
+        If noKilled >= 10 Then
             loadLevel(lvl + 1)
         End If
 
@@ -212,7 +212,7 @@ Public Class Game
         Dim i As Integer
         For i = 1 To 20
             nextLevelLbl.Top += 2 'Slide up
-            Thread.Sleep(100)
+            Thread.Sleep(10)
         Next
         nextLevelLbl.Visible = False
         nextLevelLbl.Top -= 40 'Return to old pos
