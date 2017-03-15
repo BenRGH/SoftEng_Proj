@@ -121,9 +121,6 @@
   <data name="Idle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Idle.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Shooting" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Shooting.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Background.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -147,5 +144,8 @@
   </data>
   <data name="ControlScheme" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ControlScheme.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Shooting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Shooting.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

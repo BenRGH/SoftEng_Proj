@@ -218,15 +218,13 @@
     <None Include="enemy.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Shooting.gif" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Logo.ico" />
     <None Include="Resources\Skeleton.gif" />
     <None Include="Resources\376416__ehohnke__funk-lead-loop.wav" />
     <None Include="Resources\Bullet.png" />
     <None Include="Resources\Bullet1.png" />
     <None Include="Resources\ControlScheme.png" />
+    <None Include="Resources\Shooting.jpg" />
     <Content Include="ScoreDB.mdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
