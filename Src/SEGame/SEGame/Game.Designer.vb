@@ -47,6 +47,7 @@ Partial Class Game
         Me.reloadTimer = New System.Windows.Forms.Timer(Me.components)
         Me.enemy1 = New System.Windows.Forms.PictureBox()
         Me.enemyMoveTimer = New System.Windows.Forms.Timer(Me.components)
+        Me.nextLevelLbl = New System.Windows.Forms.Label()
         CType(Me.character, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.boundBoxOutline, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.healthGroupBox.SuspendLayout()
@@ -239,6 +240,18 @@ Partial Class Game
         '
         Me.enemyMoveTimer.Enabled = True
         '
+        'nextLevelLbl
+        '
+        Me.nextLevelLbl.AutoSize = True
+        Me.nextLevelLbl.BackColor = System.Drawing.Color.Aquamarine
+        Me.nextLevelLbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.nextLevelLbl.Location = New System.Drawing.Point(265, 334)
+        Me.nextLevelLbl.Name = "nextLevelLbl"
+        Me.nextLevelLbl.Size = New System.Drawing.Size(325, 55)
+        Me.nextLevelLbl.TabIndex = 23
+        Me.nextLevelLbl.Text = "NEXT LEVEL"
+        Me.nextLevelLbl.Visible = False
+        '
         'Game
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -247,6 +260,7 @@ Partial Class Game
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(856, 607)
+        Me.Controls.Add(Me.nextLevelLbl)
         Me.Controls.Add(Me.pauseScreen)
         Me.Controls.Add(Me.enemy1)
         Me.Controls.Add(Me.projectileBox)
@@ -302,4 +316,5 @@ Partial Class Game
     Friend WithEvents reloadTimer As System.Windows.Forms.Timer
     Friend WithEvents enemy1 As System.Windows.Forms.PictureBox
     Friend WithEvents enemyMoveTimer As System.Windows.Forms.Timer
+    Friend WithEvents nextLevelLbl As System.Windows.Forms.Label
 End Class

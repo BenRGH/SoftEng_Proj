@@ -15,6 +15,8 @@ Public Class Game
     Dim animated As Boolean = False
     Dim lastShotTime As Integer
     Dim lastSpawnTime As Integer = 0
+    Dim noKilled As Integer = 0
+    Dim lvl As Integer = 0
 
     'Load window
     Private Sub Game_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -126,7 +128,11 @@ Public Class Game
         End If
 
         'Score update
-        My.Settings.currentScore = realTimeIndi 'Add enemy kills to this!
+        My.Settings.currentScore = realTimeIndi - noKilled
+
+        If noKilled >= 5 Then
+            loadLevel(lvl + 1)
+        End If
 
         'Debug only
         debugBox.Visible = My.Settings.debugMode
@@ -201,7 +207,17 @@ Public Class Game
     End Function
     'Level load
     Private Sub loadLevel(level As Integer)
-        'do 
+        noKilled = 0
+        nextLevelLbl.Visible = True
+        Dim i As Integer
+        For i = 1 To 20
+            nextLevelLbl.Top += 2 'Slide up
+            Thread.Sleep(100)
+        Next
+        nextLevelLbl.Visible = False
+        nextLevelLbl.Top -= 40 'Return to old pos
+
+        Me.BackgroundImage = My.Resources.background2
     End Sub
     'Debug damage button
     Private Sub damageDebug_Click(sender As Object, e As EventArgs) Handles damageDebug.Click
@@ -266,6 +282,7 @@ Public Class Game
             'Hide the projectile
             projectileBox.Visible = False
 
+            noKilled += 1 'Increase the number of killed enemies
 
         End If
 
