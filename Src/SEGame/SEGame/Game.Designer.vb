@@ -206,10 +206,12 @@ Partial Class Game
         '
         'projectileBox
         '
-        Me.projectileBox.BackColor = System.Drawing.Color.Red
+        Me.projectileBox.BackColor = System.Drawing.Color.Transparent
+        Me.projectileBox.BackgroundImage = CType(resources.GetObject("projectileBox.BackgroundImage"), System.Drawing.Image)
+        Me.projectileBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.projectileBox.Location = New System.Drawing.Point(387, 219)
         Me.projectileBox.Name = "projectileBox"
-        Me.projectileBox.Size = New System.Drawing.Size(22, 16)
+        Me.projectileBox.Size = New System.Drawing.Size(26, 16)
         Me.projectileBox.TabIndex = 21
         Me.projectileBox.TabStop = False
         Me.projectileBox.Visible = False

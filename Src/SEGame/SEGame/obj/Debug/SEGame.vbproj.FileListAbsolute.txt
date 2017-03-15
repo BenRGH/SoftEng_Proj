@@ -29,3 +29,4 @@ C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\SEGame\SEGame\obj\Debug\SEGame
 C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\SEGame\SEGame\obj\Debug\SEGame.exe
 C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\SEGame\SEGame\obj\Debug\SEGame.xml
 C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\SEGame\SEGame\obj\Debug\SEGame.pdb
+C:\Users\Ben\Documents\GitHub\SoftEng_Team10A\Src\SEGame\SEGame\obj\Debug\SEGame.Controls.resources

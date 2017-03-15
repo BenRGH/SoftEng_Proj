@@ -26,4 +26,11 @@
         optionWindow = Nothing
 
     End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim controlWindow As Controls
+        controlWindow = New Controls
+        controlWindow.Show()
+        controlWindow = Nothing
+    End Sub
 End Class

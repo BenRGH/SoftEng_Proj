@@ -26,6 +26,7 @@ Partial Class Menu
         Me.playBtn = New System.Windows.Forms.Button()
         Me.highBtn = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -51,7 +52,7 @@ Partial Class Menu
         'highBtn
         '
         Me.highBtn.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.highBtn.Location = New System.Drawing.Point(121, 166)
+        Me.highBtn.Location = New System.Drawing.Point(121, 156)
         Me.highBtn.Name = "highBtn"
         Me.highBtn.Size = New System.Drawing.Size(258, 42)
         Me.highBtn.TabIndex = 3
@@ -61,18 +62,29 @@ Partial Class Menu
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(121, 224)
+        Me.Button1.Location = New System.Drawing.Point(121, 204)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(258, 42)
         Me.Button1.TabIndex = 4
         Me.Button1.Text = "Options"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'Button2
+        '
+        Me.Button2.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Location = New System.Drawing.Point(121, 252)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(258, 42)
+        Me.Button2.TabIndex = 5
+        Me.Button2.Text = "Controls"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'Menu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(502, 316)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.highBtn)
         Me.Controls.Add(Me.playBtn)
@@ -89,5 +101,6 @@ Partial Class Menu
     Friend WithEvents playBtn As System.Windows.Forms.Button
     Friend WithEvents highBtn As System.Windows.Forms.Button
     Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents Button2 As System.Windows.Forms.Button
 
 End Class
