@@ -1,5 +1,5 @@
 ﻿Public Class Menu
-    Public speed As Integer = 1
+    Public Speed As Integer = 1
     'On load
     Private Sub Menu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         My.Computer.Audio.Play(My.Resources.backgroundloop, AudioPlayMode.BackgroundLoop)
@@ -19,7 +19,7 @@
         hScores = Nothing
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub optionBtn_Click(sender As Object, e As EventArgs) Handles optionBtn.Click
         Dim optionWindow As Options
         optionWindow = New Options
         optionWindow.Show()
@@ -27,7 +27,7 @@
 
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub controlBtn_Click(sender As Object, e As EventArgs) Handles controlBtn.Click
         Dim controlWindow As Controls
         controlWindow = New Controls
         controlWindow.Show()

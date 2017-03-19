@@ -1,9 +1,12 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿Imports System.ComponentModel
+Imports Microsoft.VisualBasic.CompilerServices
+
+<DesignerGenerated()> _
 Partial Class Options
-    Inherits System.Windows.Forms.Form
+    Inherits Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <DebuggerNonUserCode()> _
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -15,12 +18,12 @@ Partial Class Options
     End Sub
 
     'Required by the Windows Form Designer
-    Private components As System.ComponentModel.IContainer
+    Private components As IContainer
 
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -110,6 +113,8 @@ Partial Class Options
         'enemySpeedNew
         '
         Me.enemySpeedNew.Location = New System.Drawing.Point(103, 141)
+        Me.enemySpeedNew.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
+        Me.enemySpeedNew.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.enemySpeedNew.Name = "enemySpeedNew"
         Me.enemySpeedNew.Size = New System.Drawing.Size(120, 20)
         Me.enemySpeedNew.TabIndex = 10
@@ -153,8 +158,6 @@ Partial Class Options
         '
         'Options
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(299, 436)
         Me.Controls.Add(Me.spawnRateNew)
         Me.Controls.Add(Me.Label4)
@@ -178,16 +181,16 @@ Partial Class Options
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents speedNew As System.Windows.Forms.NumericUpDown
-    Friend WithEvents saveBtn As System.Windows.Forms.Button
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents debugEnable As System.Windows.Forms.CheckBox
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents enemySpeedNew As System.Windows.Forms.NumericUpDown
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents reloadNew As System.Windows.Forms.NumericUpDown
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents spawnRateNew As System.Windows.Forms.NumericUpDown
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents speedNew As NumericUpDown
+    Friend WithEvents saveBtn As Button
+    Friend WithEvents Label6 As Label
+    Friend WithEvents debugEnable As CheckBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents enemySpeedNew As NumericUpDown
+    Friend WithEvents Label3 As Label
+    Friend WithEvents reloadNew As NumericUpDown
+    Friend WithEvents Label4 As Label
+    Friend WithEvents spawnRateNew As NumericUpDown
 End Class

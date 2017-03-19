@@ -1,9 +1,12 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿Imports System.ComponentModel
+Imports Microsoft.VisualBasic.CompilerServices
+
+<DesignerGenerated()> _
 Partial Class Game
-    Inherits System.Windows.Forms.Form
+    Inherits Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <DebuggerNonUserCode()> _
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -15,63 +18,63 @@ Partial Class Game
     End Sub
 
     'Required by the Windows Form Designer
-    Private components As System.ComponentModel.IContainer
+    Private components As IContainer
 
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Game))
-        Me.exitBtn = New System.Windows.Forms.Button()
-        Me.pauseBtn = New System.Windows.Forms.Button()
-        Me.worldTimer = New System.Windows.Forms.Timer(Me.components)
-        Me.charMovTimer_up = New System.Windows.Forms.Timer(Me.components)
-        Me.charMovTimer_down = New System.Windows.Forms.Timer(Me.components)
-        Me.charMovTimer_left = New System.Windows.Forms.Timer(Me.components)
-        Me.charMovTimer_right = New System.Windows.Forms.Timer(Me.components)
-        Me.debugBox = New System.Windows.Forms.TextBox()
-        Me.character = New System.Windows.Forms.PictureBox()
-        Me.boundBoxOutline = New System.Windows.Forms.PictureBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.timeIndicator = New System.Windows.Forms.TextBox()
-        Me.healthGroupBox = New System.Windows.Forms.GroupBox()
-        Me.healthBar = New System.Windows.Forms.PictureBox()
-        Me.damageDebug = New System.Windows.Forms.Button()
-        Me.pauseScreen = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.pausedLbl = New System.Windows.Forms.Label()
-        Me.projectileBox = New System.Windows.Forms.PictureBox()
-        Me.shootTimer = New System.Windows.Forms.Timer(Me.components)
-        Me.reloadTimer = New System.Windows.Forms.Timer(Me.components)
-        Me.enemy1 = New System.Windows.Forms.PictureBox()
-        Me.enemyMoveTimer = New System.Windows.Forms.Timer(Me.components)
-        Me.nextLevelLbl = New System.Windows.Forms.Label()
-        CType(Me.character, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.boundBoxOutline, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.components = New Container()
+        Dim resources As ComponentResourceManager = New ComponentResourceManager(GetType(Game))
+        Me.exitBtn = New Button()
+        Me.pauseBtn = New Button()
+        Me.worldTimer = New Timer(Me.components)
+        Me.charMovTimer_up = New Timer(Me.components)
+        Me.charMovTimer_down = New Timer(Me.components)
+        Me.charMovTimer_left = New Timer(Me.components)
+        Me.charMovTimer_right = New Timer(Me.components)
+        Me.debugBox = New TextBox()
+        Me.character = New PictureBox()
+        Me.boundBoxOutline = New PictureBox()
+        Me.Label1 = New Label()
+        Me.timeIndicator = New TextBox()
+        Me.healthGroupBox = New GroupBox()
+        Me.healthBar = New PictureBox()
+        Me.damageDebug = New Button()
+        Me.pauseScreen = New PictureBox()
+        Me.PictureBox1 = New PictureBox()
+        Me.pausedLbl = New Label()
+        Me.projectileBox = New PictureBox()
+        Me.shootTimer = New Timer(Me.components)
+        Me.reloadTimer = New Timer(Me.components)
+        Me.enemy1 = New PictureBox()
+        Me.enemyMoveTimer = New Timer(Me.components)
+        Me.nextLevelLbl = New Label()
+        CType(Me.character, ISupportInitialize).BeginInit()
+        CType(Me.boundBoxOutline, ISupportInitialize).BeginInit()
         Me.healthGroupBox.SuspendLayout()
-        CType(Me.healthBar, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pauseScreen, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.projectileBox, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.enemy1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.healthBar, ISupportInitialize).BeginInit()
+        CType(Me.pauseScreen, ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, ISupportInitialize).BeginInit()
+        CType(Me.projectileBox, ISupportInitialize).BeginInit()
+        CType(Me.enemy1, ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'exitBtn
         '
-        Me.exitBtn.Location = New System.Drawing.Point(769, 12)
+        Me.exitBtn.Location = New Point(769, 12)
         Me.exitBtn.Name = "exitBtn"
-        Me.exitBtn.Size = New System.Drawing.Size(75, 23)
+        Me.exitBtn.Size = New Size(75, 23)
         Me.exitBtn.TabIndex = 8
         Me.exitBtn.Text = "Exit"
         Me.exitBtn.UseVisualStyleBackColor = True
         '
         'pauseBtn
         '
-        Me.pauseBtn.Location = New System.Drawing.Point(688, 12)
+        Me.pauseBtn.Location = New Point(688, 12)
         Me.pauseBtn.Name = "pauseBtn"
-        Me.pauseBtn.Size = New System.Drawing.Size(75, 23)
+        Me.pauseBtn.Size = New Size(75, 23)
         Me.pauseBtn.TabIndex = 9
         Me.pauseBtn.Text = "Pause"
         Me.pauseBtn.UseVisualStyleBackColor = True
@@ -99,120 +102,120 @@ Partial Class Game
         '
         'debugBox
         '
-        Me.debugBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.debugBox.Location = New System.Drawing.Point(275, 165)
+        Me.debugBox.Font = New Font("Microsoft Sans Serif", 26.25!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+        Me.debugBox.Location = New Point(275, 165)
         Me.debugBox.Name = "debugBox"
-        Me.debugBox.Size = New System.Drawing.Size(284, 47)
+        Me.debugBox.Size = New Size(284, 47)
         Me.debugBox.TabIndex = 12
         '
         'character
         '
-        Me.character.BackColor = System.Drawing.Color.Transparent
-        Me.character.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.character.Image = Global.SEGame.My.Resources.Resources.Idle
-        Me.character.Location = New System.Drawing.Point(22, 485)
+        Me.character.BackColor = Color.Transparent
+        Me.character.BackgroundImageLayout = ImageLayout.None
+        Me.character.Image = My.Resources.Resources.Idle
+        Me.character.Location = New Point(22, 485)
         Me.character.Name = "character"
-        Me.character.Size = New System.Drawing.Size(100, 100)
-        Me.character.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.character.Size = New Size(100, 100)
+        Me.character.SizeMode = PictureBoxSizeMode.AutoSize
         Me.character.TabIndex = 10
         Me.character.TabStop = False
         '
         'boundBoxOutline
         '
-        Me.boundBoxOutline.BackColor = System.Drawing.Color.Red
-        Me.boundBoxOutline.Location = New System.Drawing.Point(12, 452)
+        Me.boundBoxOutline.BackColor = Color.Red
+        Me.boundBoxOutline.Location = New Point(12, 452)
         Me.boundBoxOutline.Name = "boundBoxOutline"
-        Me.boundBoxOutline.Size = New System.Drawing.Size(13, 14)
+        Me.boundBoxOutline.Size = New Size(13, 14)
         Me.boundBoxOutline.TabIndex = 13
         Me.boundBoxOutline.TabStop = False
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.ForestGreen
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(568, 12)
+        Me.Label1.BackColor = Color.ForestGreen
+        Me.Label1.Font = New Font("Microsoft Sans Serif", 12.0!, FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New Point(568, 12)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(47, 20)
+        Me.Label1.Size = New Size(47, 20)
         Me.Label1.TabIndex = 14
         Me.Label1.Text = "Time:"
         '
         'timeIndicator
         '
-        Me.timeIndicator.Location = New System.Drawing.Point(621, 12)
+        Me.timeIndicator.Location = New Point(621, 12)
         Me.timeIndicator.Name = "timeIndicator"
-        Me.timeIndicator.Size = New System.Drawing.Size(38, 20)
+        Me.timeIndicator.Size = New Size(38, 20)
         Me.timeIndicator.TabIndex = 15
         '
         'healthGroupBox
         '
-        Me.healthGroupBox.BackColor = System.Drawing.Color.ForestGreen
+        Me.healthGroupBox.BackColor = Color.ForestGreen
         Me.healthGroupBox.Controls.Add(Me.healthBar)
-        Me.healthGroupBox.ForeColor = System.Drawing.Color.White
-        Me.healthGroupBox.Location = New System.Drawing.Point(40, 13)
+        Me.healthGroupBox.ForeColor = Color.White
+        Me.healthGroupBox.Location = New Point(40, 13)
         Me.healthGroupBox.Name = "healthGroupBox"
-        Me.healthGroupBox.Size = New System.Drawing.Size(475, 22)
+        Me.healthGroupBox.Size = New Size(475, 22)
         Me.healthGroupBox.TabIndex = 16
         Me.healthGroupBox.TabStop = False
         Me.healthGroupBox.Text = "Health"
         '
         'healthBar
         '
-        Me.healthBar.BackColor = System.Drawing.Color.Maroon
-        Me.healthBar.Location = New System.Drawing.Point(0, 12)
+        Me.healthBar.BackColor = Color.Maroon
+        Me.healthBar.Location = New Point(0, 12)
         Me.healthBar.Name = "healthBar"
-        Me.healthBar.Size = New System.Drawing.Size(477, 10)
+        Me.healthBar.Size = New Size(477, 10)
         Me.healthBar.TabIndex = 0
         Me.healthBar.TabStop = False
         '
         'damageDebug
         '
-        Me.damageDebug.Location = New System.Drawing.Point(275, 219)
+        Me.damageDebug.Location = New Point(275, 219)
         Me.damageDebug.Name = "damageDebug"
-        Me.damageDebug.Size = New System.Drawing.Size(75, 23)
+        Me.damageDebug.Size = New Size(75, 23)
         Me.damageDebug.TabIndex = 17
         Me.damageDebug.Text = "damage"
         Me.damageDebug.UseVisualStyleBackColor = True
         '
         'pauseScreen
         '
-        Me.pauseScreen.BackColor = System.Drawing.Color.Lime
-        Me.pauseScreen.Location = New System.Drawing.Point(356, 219)
+        Me.pauseScreen.BackColor = Color.Lime
+        Me.pauseScreen.Location = New Point(356, 219)
         Me.pauseScreen.Name = "pauseScreen"
-        Me.pauseScreen.Size = New System.Drawing.Size(25, 16)
+        Me.pauseScreen.Size = New Size(25, 16)
         Me.pauseScreen.TabIndex = 18
         Me.pauseScreen.TabStop = False
         Me.pauseScreen.Visible = False
         '
         'PictureBox1
         '
-        Me.PictureBox1.BackColor = System.Drawing.Color.PaleGreen
-        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
+        Me.PictureBox1.BackColor = Color.PaleGreen
+        Me.PictureBox1.Location = New Point(0, 0)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(856, 45)
+        Me.PictureBox1.Size = New Size(856, 45)
         Me.PictureBox1.TabIndex = 19
         Me.PictureBox1.TabStop = False
         '
         'pausedLbl
         '
         Me.pausedLbl.AutoSize = True
-        Me.pausedLbl.BackColor = System.Drawing.Color.Lime
-        Me.pausedLbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.pausedLbl.Location = New System.Drawing.Point(311, 265)
+        Me.pausedLbl.BackColor = Color.Lime
+        Me.pausedLbl.Font = New Font("Microsoft Sans Serif", 36.0!, FontStyle.Bold, GraphicsUnit.Point, CType(0, Byte))
+        Me.pausedLbl.Location = New Point(311, 265)
         Me.pausedLbl.Name = "pausedLbl"
-        Me.pausedLbl.Size = New System.Drawing.Size(228, 55)
+        Me.pausedLbl.Size = New Size(228, 55)
         Me.pausedLbl.TabIndex = 20
         Me.pausedLbl.Text = "PAUSED"
         Me.pausedLbl.Visible = False
         '
         'projectileBox
         '
-        Me.projectileBox.BackColor = System.Drawing.Color.Transparent
-        Me.projectileBox.BackgroundImage = CType(resources.GetObject("projectileBox.BackgroundImage"), System.Drawing.Image)
-        Me.projectileBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.projectileBox.Location = New System.Drawing.Point(387, 219)
+        Me.projectileBox.BackColor = Color.Transparent
+        Me.projectileBox.BackgroundImage = CType(resources.GetObject("projectileBox.BackgroundImage"), Image)
+        Me.projectileBox.BackgroundImageLayout = ImageLayout.Stretch
+        Me.projectileBox.Location = New Point(387, 219)
         Me.projectileBox.Name = "projectileBox"
-        Me.projectileBox.Size = New System.Drawing.Size(26, 16)
+        Me.projectileBox.Size = New Size(26, 16)
         Me.projectileBox.TabIndex = 21
         Me.projectileBox.TabStop = False
         Me.projectileBox.Visible = False
@@ -227,12 +230,12 @@ Partial Class Game
         '
         'enemy1
         '
-        Me.enemy1.BackColor = System.Drawing.Color.Transparent
-        Me.enemy1.Image = Global.SEGame.My.Resources.Resources.Skeleton
-        Me.enemy1.Location = New System.Drawing.Point(769, 509)
+        Me.enemy1.BackColor = Color.Transparent
+        Me.enemy1.Image = My.Resources.Resources.Skeleton
+        Me.enemy1.Location = New Point(769, 509)
         Me.enemy1.Name = "enemy1"
-        Me.enemy1.Size = New System.Drawing.Size(87, 100)
-        Me.enemy1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.enemy1.Size = New Size(87, 100)
+        Me.enemy1.SizeMode = PictureBoxSizeMode.StretchImage
         Me.enemy1.TabIndex = 22
         Me.enemy1.TabStop = False
         '
@@ -243,23 +246,23 @@ Partial Class Game
         'nextLevelLbl
         '
         Me.nextLevelLbl.AutoSize = True
-        Me.nextLevelLbl.BackColor = System.Drawing.Color.Aquamarine
-        Me.nextLevelLbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.nextLevelLbl.Location = New System.Drawing.Point(265, 334)
+        Me.nextLevelLbl.BackColor = Color.Aquamarine
+        Me.nextLevelLbl.Font = New Font("Microsoft Sans Serif", 36.0!, FontStyle.Bold, GraphicsUnit.Point, CType(0, Byte))
+        Me.nextLevelLbl.Location = New Point(265, 334)
         Me.nextLevelLbl.Name = "nextLevelLbl"
-        Me.nextLevelLbl.Size = New System.Drawing.Size(325, 55)
+        Me.nextLevelLbl.Size = New Size(325, 55)
         Me.nextLevelLbl.TabIndex = 23
         Me.nextLevelLbl.Text = "NEXT LEVEL"
         Me.nextLevelLbl.Visible = False
         '
         'Game
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.DimGray
-        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(856, 607)
+        Me.AutoScaleDimensions = New SizeF(6.0!, 13.0!)
+        Me.AutoScaleMode = AutoScaleMode.Font
+        Me.BackColor = Color.DimGray
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
+        Me.BackgroundImageLayout = ImageLayout.Stretch
+        Me.ClientSize = New Size(856, 607)
         Me.Controls.Add(Me.nextLevelLbl)
         Me.Controls.Add(Me.pauseScreen)
         Me.Controls.Add(Me.enemy1)
@@ -277,44 +280,44 @@ Partial Class Game
         Me.Controls.Add(Me.PictureBox1)
         Me.DoubleBuffered = True
         Me.KeyPreview = True
-        Me.MaximumSize = New System.Drawing.Size(872, 646)
-        Me.MinimumSize = New System.Drawing.Size(872, 646)
+        Me.MaximumSize = New Size(872, 646)
+        Me.MinimumSize = New Size(872, 646)
         Me.Name = "Game"
         Me.Text = "Game"
-        CType(Me.character, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.boundBoxOutline, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.character, ISupportInitialize).EndInit()
+        CType(Me.boundBoxOutline, ISupportInitialize).EndInit()
         Me.healthGroupBox.ResumeLayout(False)
-        CType(Me.healthBar, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pauseScreen, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.projectileBox, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.enemy1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.healthBar, ISupportInitialize).EndInit()
+        CType(Me.pauseScreen, ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, ISupportInitialize).EndInit()
+        CType(Me.projectileBox, ISupportInitialize).EndInit()
+        CType(Me.enemy1, ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents exitBtn As System.Windows.Forms.Button
-    Friend WithEvents pauseBtn As System.Windows.Forms.Button
-    Friend WithEvents character As System.Windows.Forms.PictureBox
-    Friend WithEvents worldTimer As System.Windows.Forms.Timer
-    Friend WithEvents debugBox As System.Windows.Forms.TextBox
-    Friend WithEvents charMovTimer_up As System.Windows.Forms.Timer
-    Friend WithEvents charMovTimer_down As System.Windows.Forms.Timer
-    Friend WithEvents charMovTimer_left As System.Windows.Forms.Timer
-    Friend WithEvents charMovTimer_right As System.Windows.Forms.Timer
-    Friend WithEvents boundBoxOutline As System.Windows.Forms.PictureBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents timeIndicator As System.Windows.Forms.TextBox
-    Friend WithEvents healthGroupBox As System.Windows.Forms.GroupBox
-    Friend WithEvents healthBar As System.Windows.Forms.PictureBox
-    Friend WithEvents damageDebug As System.Windows.Forms.Button
-    Friend WithEvents pauseScreen As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
-    Friend WithEvents pausedLbl As System.Windows.Forms.Label
-    Friend WithEvents projectileBox As System.Windows.Forms.PictureBox
-    Friend WithEvents shootTimer As System.Windows.Forms.Timer
-    Friend WithEvents reloadTimer As System.Windows.Forms.Timer
-    Friend WithEvents enemy1 As System.Windows.Forms.PictureBox
-    Friend WithEvents enemyMoveTimer As System.Windows.Forms.Timer
-    Friend WithEvents nextLevelLbl As System.Windows.Forms.Label
+    Friend WithEvents exitBtn As Button
+    Friend WithEvents pauseBtn As Button
+    Friend WithEvents character As PictureBox
+    Friend WithEvents worldTimer As Timer
+    Friend WithEvents debugBox As TextBox
+    Friend WithEvents charMovTimer_up As Timer
+    Friend WithEvents charMovTimer_down As Timer
+    Friend WithEvents charMovTimer_left As Timer
+    Friend WithEvents charMovTimer_right As Timer
+    Friend WithEvents boundBoxOutline As PictureBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents timeIndicator As TextBox
+    Friend WithEvents healthGroupBox As GroupBox
+    Friend WithEvents healthBar As PictureBox
+    Friend WithEvents damageDebug As Button
+    Friend WithEvents pauseScreen As PictureBox
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents pausedLbl As Label
+    Friend WithEvents projectileBox As PictureBox
+    Friend WithEvents shootTimer As Timer
+    Friend WithEvents reloadTimer As Timer
+    Friend WithEvents enemy1 As PictureBox
+    Friend WithEvents enemyMoveTimer As Timer
+    Friend WithEvents nextLevelLbl As Label
 End Class

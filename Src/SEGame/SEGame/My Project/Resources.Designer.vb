@@ -12,6 +12,12 @@ Option Strict On
 Option Explicit On
 
 Imports System
+Imports System.CodeDom.Compiler
+Imports System.ComponentModel
+Imports System.Globalization
+Imports System.IO
+Imports System.Resources
+Imports System.Runtime.CompilerServices
 
 Namespace My.Resources
     
@@ -22,24 +28,24 @@ Namespace My.Resources
     '''<summary>
     '''  A strongly-typed resource class, for looking up localized strings, etc.
     '''</summary>
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0"),  _
-     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
-     Global.Microsoft.VisualBasic.HideModuleNameAttribute()>  _
+    <GeneratedCode("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0"),  _
+     DebuggerNonUserCode(),  _
+     CompilerGenerated(),  _
+     HideModuleName()>  _
     Friend Module Resources
         
-        Private resourceMan As Global.System.Resources.ResourceManager
+        Private resourceMan As ResourceManager
         
-        Private resourceCulture As Global.System.Globalization.CultureInfo
+        Private resourceCulture As CultureInfo
         
         '''<summary>
         '''  Returns the cached ResourceManager instance used by this class.
         '''</summary>
-        <Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Friend ReadOnly Property ResourceManager() As Global.System.Resources.ResourceManager
+        <EditorBrowsable(EditorBrowsableState.Advanced)>  _
+        Friend ReadOnly Property ResourceManager() As ResourceManager
             Get
-                If Object.ReferenceEquals(resourceMan, Nothing) Then
-                    Dim temp As Global.System.Resources.ResourceManager = New Global.System.Resources.ResourceManager("SEGame.Resources", GetType(Resources).Assembly)
+                If ReferenceEquals(resourceMan, Nothing) Then
+                    Dim temp As ResourceManager = New ResourceManager("SEGame.Resources", GetType(Resources).Assembly)
                     resourceMan = temp
                 End If
                 Return resourceMan
@@ -50,8 +56,8 @@ Namespace My.Resources
         '''  Overrides the current thread's CurrentUICulture property for all
         '''  resource lookups using this strongly typed resource class.
         '''</summary>
-        <Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Friend Property Culture() As Global.System.Globalization.CultureInfo
+        <EditorBrowsable(EditorBrowsableState.Advanced)>  _
+        Friend Property Culture() As CultureInfo
             Get
                 Return resourceCulture
             End Get
@@ -63,27 +69,27 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property Background() As System.Drawing.Bitmap
+        Friend ReadOnly Property Background() As Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Background", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
+                Return CType(obj,Bitmap)
             End Get
         End Property
         
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property background2() As System.Drawing.Bitmap
+        Friend ReadOnly Property background2() As Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("background2", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
+                Return CType(obj,Bitmap)
             End Get
         End Property
         
         '''<summary>
         '''  Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         '''</summary>
-        Friend ReadOnly Property backgroundloop() As System.IO.UnmanagedMemoryStream
+        Friend ReadOnly Property backgroundloop() As UnmanagedMemoryStream
             Get
                 Return ResourceManager.GetStream("backgroundloop", resourceCulture)
             End Get
@@ -92,80 +98,80 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property Backwards() As System.Drawing.Bitmap
+        Friend ReadOnly Property Backwards() As Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Backwards", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
+                Return CType(obj,Bitmap)
             End Get
         End Property
         
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property Bullet() As System.Drawing.Bitmap
+        Friend ReadOnly Property Bullet() As Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Bullet", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
+                Return CType(obj,Bitmap)
             End Get
         End Property
         
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property Bullet1() As System.Drawing.Bitmap
+        Friend ReadOnly Property Bullet1() As Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Bullet1", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
+                Return CType(obj,Bitmap)
             End Get
         End Property
         
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property ControlScheme() As System.Drawing.Bitmap
+        Friend ReadOnly Property ControlScheme() As Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("ControlScheme", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
+                Return CType(obj,Bitmap)
             End Get
         End Property
         
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property Foward() As System.Drawing.Bitmap
+        Friend ReadOnly Property Foward() As Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Foward", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
+                Return CType(obj,Bitmap)
             End Get
         End Property
         
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property Idle() As System.Drawing.Bitmap
+        Friend ReadOnly Property Idle() As Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Idle", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
+                Return CType(obj,Bitmap)
             End Get
         End Property
         
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property Shooting() As System.Drawing.Bitmap
+        Friend ReadOnly Property Shooting() As Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Shooting", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
+                Return CType(obj,Bitmap)
             End Get
         End Property
         
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property Skeleton() As System.Drawing.Bitmap
+        Friend ReadOnly Property Skeleton() As Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Skeleton", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
+                Return CType(obj,Bitmap)
             End Get
         End Property
     End Module

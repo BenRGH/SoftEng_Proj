@@ -1,9 +1,13 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿Imports System.ComponentModel
+Imports Microsoft.VisualBasic.CompilerServices
+Imports SEGame.My.Resources
+
+<DesignerGenerated()> _
 Partial Class Controls
-    Inherits System.Windows.Forms.Form
+    Inherits Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <DebuggerNonUserCode()> _
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -15,23 +19,23 @@ Partial Class Controls
     End Sub
 
     'Required by the Windows Form Designer
-    Private components As System.ComponentModel.IContainer
+    Private components As IContainer
 
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.SuspendLayout()
         '
         'Controls
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.SEGame.My.Resources.Resources.ControlScheme
-        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(683, 638)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.AutoScaleDimensions = New SizeF(6.0!, 13.0!)
+        Me.AutoScaleMode = AutoScaleMode.Font
+        Me.BackgroundImage = ControlScheme
+        Me.BackgroundImageLayout = ImageLayout.Stretch
+        Me.ClientSize = New Size(683, 638)
+        Me.FormBorderStyle = FormBorderStyle.FixedSingle
         Me.Name = "Controls"
         Me.Text = "Controls"
         Me.ResumeLayout(False)
