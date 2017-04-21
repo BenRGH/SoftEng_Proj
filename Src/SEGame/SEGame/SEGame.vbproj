@@ -165,6 +165,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ScoreDBDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Shop.Designer.vb">
+      <DependentUpon>Shop.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Shop.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Controls.resx">
@@ -187,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Score.resx">
       <DependentUpon>Score.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shop.resx">
+      <DependentUpon>Shop.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

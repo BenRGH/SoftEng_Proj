@@ -1,4 +1,6 @@
-﻿Imports System.Threading
+﻿Imports System.Runtime.InteropServices
+Imports System.Security.Cryptography.X509Certificates
+Imports System.Threading
 Public Class Game
 
     'World
@@ -7,16 +9,18 @@ Public Class Game
     Dim _paused As Boolean = False
     Public Ended As Boolean = False 'Used for the score form
 
+
     'Character
     Dim _nick As String
     'The area the character can move in
     ReadOnly _movBounds = New Integer(,) {{-20, 430}, {200, 430}, {-20, 605}, {200, 605}} 'Each pair is a corner of the square
-    Dim _health As Integer = 100
+    Dim _health As Double = 100
     Dim _animated As Boolean = False
     Dim _lastShotTime As Integer
     Dim _lastSpawnTime As Integer = 0
     Dim _noKilled As Integer = 0
     Dim _lvl As Integer = 0
+    Dim _wearingArmour As Boolean = False
 
     'Load window
     Private Sub Game_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -41,6 +45,12 @@ Public Class Game
         'Enemy starting pos
         enemy1.Left = Right
         enemy1.Visible = True
+
+        'Reset shop
+        My.Settings.armour = False
+        My.Settings.lazer = False
+        My.Settings.god = False
+
 
     End Sub
     'Close game window
@@ -122,26 +132,41 @@ Public Class Game
         healthBar.Width = 477 * (_health / 100) 'Sets the healthbar width to the health percentage of the default width 477
 
         'Test for end game
-        If _health = 0 Then
-            endGame()
+        If _health <= 0 Then
+            EndGame()
             _paused = True
         End If
 
         'Score update
-        My.Settings.currentScore = realTimeIndi - _noKilled
+        My.Settings.currentScore = realTimeIndi + (_noKilled * 10)
 
         If _noKilled >= 10 Then
-            loadLevel(_lvl + 1)
+            LoadLevel(_lvl + 1)
         End If
+
+        'Shop items check
+        If My.Settings.armour Then
+            armourAlert.Visible = True
+            If Not _wearingArmour Then
+                _health += 20 'Increase health due to armour
+            End If
+            _wearingArmour = True
+        End If
+
+
+
 
         'Debug only
         debugBox.Visible = My.Settings.debugMode
         boundBoxOutline.Visible = My.Settings.debugMode
         damageDebug.Visible = My.Settings.debugMode
+        healthLabel.Visible = My.Settings.debugMode
+        healthBox.Visible = My.Settings.debugMode
+        healthBox.Text = _health
     End Sub
     'Movement UP steps
     Private Sub charMovTimer_up_Tick(sender As Object, e As EventArgs) Handles charMovTimer_up.Tick
-        If boundCheck("up") Then
+        If BoundCheck("up") Then
             character.Top -= My.Settings.speed
         End If
 
@@ -149,7 +174,7 @@ Public Class Game
     End Sub
     'Movement DOWN steps
     Private Sub charMovTimer_down_Tick(sender As Object, e As EventArgs) Handles charMovTimer_down.Tick
-        If boundCheck("down") Then
+        If BoundCheck("down") Then
             If Not _paused Then 'movement only when the game is not paused
                 character.Top += My.Settings.speed
             End If
@@ -159,7 +184,7 @@ Public Class Game
     End Sub
     'Movement LEFT steps
     Private Sub charMovTimer_left_Tick(sender As Object, e As EventArgs) Handles charMovTimer_left.Tick
-        If boundCheck("left") Then
+        If BoundCheck("left") Then
             character.Left -= My.Settings.speed
         End If
 
@@ -167,7 +192,7 @@ Public Class Game
     End Sub
     'Movement RIGHT steps
     Private Sub charMovTimer_right_Tick(sender As Object, e As EventArgs) Handles charMovTimer_right.Tick
-        If boundCheck("right") Then
+        If BoundCheck("right") Then
             character.Left += My.Settings.speed
         End If
 
@@ -226,7 +251,7 @@ Public Class Game
     End Sub
     'Endgame
     Private Sub EndGame()
-        ended = True
+        Ended = True
 
         'Open highscores window
         Dim hScores As Score
@@ -239,7 +264,7 @@ Public Class Game
     End Sub
     'Shoot - mouse click
     Private Sub Game_MouseClick(sender As Object, e As MouseEventArgs) Handles Me.MouseClick
-        debugBox.Text = getMousePos().ToString()
+        debugBox.Text = GetMousePos().ToString()
 
         'Find the pos along a line between two points
         '<------------------------DO THIS------------------------------->
@@ -290,10 +315,13 @@ Public Class Game
     'Gets mouse current location - WIP
     Private Function GetMousePos() As Point
         GetMousePos = Me.PointToClient(Cursor.Position)
-        Return getMousePos
+        Return GetMousePos
     End Function
     'Pause button
     Private Sub Pause(sender As Object, e As EventArgs) Handles pauseBtn.Click
+        Dim shopWindow As Shop
+        shopWindow = New Shop()
+
         If _paused Then 'If the game is already paused then unpause
             _paused = False
             pauseBtn.Text = "Pause"
@@ -303,6 +331,11 @@ Public Class Game
 
             worldTimer.Enabled = True 'Resumes running major code
             enemyMoveTimer.Enabled = True
+
+            'Hide the shop window
+            shopWindow.Close()
+            shopWindow = Nothing
+
         Else
             _paused = True 'If the game isn't paused then pause
             pauseBtn.Text = "Resume"
@@ -312,10 +345,11 @@ Public Class Game
 
             worldTimer.Enabled = False 'Stops major code
             enemyMoveTimer.Enabled = False
+
+            'Open the shop window
+            shopWindow.Show()
+            shopWindow = Nothing
         End If
-
-
-
     End Sub
     'Enemy timer
     Private Sub enemyMoveTimer_Tick(sender As Object, e As EventArgs) Handles enemyMoveTimer.Tick

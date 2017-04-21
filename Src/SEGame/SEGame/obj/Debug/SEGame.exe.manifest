@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SEGame.exe" size="5624792">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SEGame.exe" size="5632984">
       <assemblyIdentity name="SEGame" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>H9SmH7ARjl5+qLx2Xr5uXVQZCH+wqJrXzkbdhj5fqzQ=</dsig:DigestValue>
+        <dsig:DigestValue>szUUPLe96CA9tMtY5S+0s0IrY8mVFj43pj83ymJxsdc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -81,13 +81,13 @@
       <dsig:DigestValue>Zy8xtTQYBXICezTBLpknU3uXcRf8NVOPFn0Breq83xM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="SEGame.exe.config" size="1751">
+  <file name="SEGame.exe.config" size="2108">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>mdIxVCY8Uf3/qiZxqEei0oJmnScWxPNMX48/9BRZmQY=</dsig:DigestValue>
+      <dsig:DigestValue>lVNeGFQvJRYdDDSJOcLt4qKNtq7LoHOSTuHsNt3Wb4U=</dsig:DigestValue>
     </hash>
   </file>
   <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">

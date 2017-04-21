@@ -65,7 +65,7 @@ Partial Class Options
         'speedNew
         '
         Me.speedNew.Location = New System.Drawing.Point(103, 77)
-        Me.speedNew.Maximum = New Decimal(New Integer() {5, 0, 0, 0})
+        Me.speedNew.Maximum = New Decimal(New Integer() {6, 0, 0, 0})
         Me.speedNew.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.speedNew.Name = "speedNew"
         Me.speedNew.Size = New System.Drawing.Size(120, 20)
@@ -113,12 +113,12 @@ Partial Class Options
         'enemySpeedNew
         '
         Me.enemySpeedNew.Location = New System.Drawing.Point(103, 141)
-        Me.enemySpeedNew.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
+        Me.enemySpeedNew.Maximum = New Decimal(New Integer() {20, 0, 0, 0})
         Me.enemySpeedNew.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.enemySpeedNew.Name = "enemySpeedNew"
         Me.enemySpeedNew.Size = New System.Drawing.Size(120, 20)
         Me.enemySpeedNew.TabIndex = 10
-        Me.enemySpeedNew.Value = New Decimal(New Integer() {5, 0, 0, 0})
+        Me.enemySpeedNew.Value = New Decimal(New Integer() {15, 0, 0, 0})
         '
         'Label3
         '

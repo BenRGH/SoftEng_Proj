@@ -11,21 +11,16 @@
 Option Strict On
 Option Explicit On
 
-Imports System.CodeDom.Compiler
-Imports System.ComponentModel
-Imports System.ComponentModel.Design
-Imports System.Configuration
-Imports System.Runtime.CompilerServices
 
 Namespace My
     
-    <CompilerGenerated(),  _
-     GeneratedCode("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "12.0.0.0"),  _
-     EditorBrowsable(EditorBrowsableState.Advanced)>  _
+    <Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "12.0.0.0"),  _
+     Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
     Partial Friend NotInheritable Class MySettings
-        Inherits ApplicationSettingsBase
+        Inherits Global.System.Configuration.ApplicationSettingsBase
         
-        Private Shared defaultInstance As MySettings = CType(Synchronized(New MySettings()),MySettings)
+        Private Shared defaultInstance As MySettings = CType(Global.System.Configuration.ApplicationSettingsBase.Synchronized(New MySettings()),MySettings)
         
 #Region "My.Settings Auto-Save Functionality"
 #If _MyType = "WindowsForms" Then
@@ -33,10 +28,10 @@ Namespace My
 
     Private Shared addedHandlerLockObject As New Object
 
-    <DebuggerNonUserCode(), EditorBrowsable(EditorBrowsableState.Advanced)> _
-    Private Shared Sub AutoSaveSettings(ByVal sender As Object, ByVal e As EventArgs)
-        If Application.SaveMySettingsOnExit Then
-            Settings.Save()
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+    Private Shared Sub AutoSaveSettings(ByVal sender As Global.System.Object, ByVal e As Global.System.EventArgs)
+        If My.Application.SaveMySettingsOnExit Then
+            My.Settings.Save()
         End If
     End Sub
 #End If
@@ -49,7 +44,7 @@ Namespace My
                If Not addedHandler Then
                     SyncLock addedHandlerLockObject
                         If Not addedHandler Then
-                            AddHandler Application.Shutdown, AddressOf AutoSaveSettings
+                            AddHandler My.Application.Shutdown, AddressOf AutoSaveSettings
                             addedHandler = True
                         End If
                     End SyncLock
@@ -59,9 +54,9 @@ Namespace My
             End Get
         End Property
         
-        <UserScopedSetting(),  _
-         DebuggerNonUserCode(),  _
-         DefaultSettingValue("False")>  _
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
         Public Property debugMode() As Boolean
             Get
                 Return CType(Me("debugMode"),Boolean)
@@ -71,9 +66,9 @@ Namespace My
             End Set
         End Property
         
-        <UserScopedSetting(),  _
-         DebuggerNonUserCode(),  _
-         DefaultSettingValue("1")>  _
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("1")>  _
         Public Property speed() As Integer
             Get
                 Return CType(Me("speed"),Integer)
@@ -83,19 +78,19 @@ Namespace My
             End Set
         End Property
         
-        <ApplicationScopedSetting(),  _
-         DebuggerNonUserCode(),  _
-         SpecialSetting(SpecialSetting.ConnectionString),  _
-         DefaultSettingValue("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\ScoreDB.mdb")>  _
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\ScoreDB.mdb")>  _
         Public ReadOnly Property ScoreDBConnectionString() As String
             Get
                 Return CType(Me("ScoreDBConnectionString"),String)
             End Get
         End Property
         
-        <UserScopedSetting(),  _
-         DebuggerNonUserCode(),  _
-         DefaultSettingValue("0")>  _
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
         Public Property currentScore() As Integer
             Get
                 Return CType(Me("currentScore"),Integer)
@@ -105,9 +100,9 @@ Namespace My
             End Set
         End Property
         
-        <UserScopedSetting(),  _
-         DebuggerNonUserCode(),  _
-         DefaultSettingValue("5")>  _
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("15")>  _
         Public Property enemySpeed() As Integer
             Get
                 Return CType(Me("enemySpeed"),Integer)
@@ -117,9 +112,9 @@ Namespace My
             End Set
         End Property
         
-        <UserScopedSetting(),  _
-         DebuggerNonUserCode(),  _
-         DefaultSettingValue("20")>  _
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("20")>  _
         Public Property reloadSpeed() As Integer
             Get
                 Return CType(Me("reloadSpeed"),Integer)
@@ -129,9 +124,9 @@ Namespace My
             End Set
         End Property
         
-        <UserScopedSetting(),  _
-         DebuggerNonUserCode(),  _
-         DefaultSettingValue("2")>  _
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("2")>  _
         Public Property spawnRate() As Integer
             Get
                 Return CType(Me("spawnRate"),Integer)
@@ -140,20 +135,56 @@ Namespace My
                 Me("spawnRate") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property armour() As Boolean
+            Get
+                Return CType(Me("armour"),Boolean)
+            End Get
+            Set
+                Me("armour") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property lazer() As Boolean
+            Get
+                Return CType(Me("lazer"),Boolean)
+            End Get
+            Set
+                Me("lazer") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property god() As Boolean
+            Get
+                Return CType(Me("god"),Boolean)
+            End Get
+            Set
+                Me("god") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
 Namespace My
     
-    <HideModuleName(),  _
-     DebuggerNonUserCode(),  _
-     CompilerGenerated()>  _
+    <Global.Microsoft.VisualBasic.HideModuleNameAttribute(),  _
+     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute()>  _
     Friend Module MySettingsProperty
         
-        <HelpKeyword("My.Settings")>  _
-        Friend ReadOnly Property Settings() As MySettings
+        <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")>  _
+        Friend ReadOnly Property Settings() As Global.SEGame.My.MySettings
             Get
-                Return MySettings.Default
+                Return Global.SEGame.My.MySettings.Default
             End Get
         End Property
     End Module
