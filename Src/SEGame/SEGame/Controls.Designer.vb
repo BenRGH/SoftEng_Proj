@@ -26,19 +26,30 @@ Partial Class Controls
     'Do not modify it using the code editor.
     <DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(12, 603)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(238, 26)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "If you have any further issues contact us here: " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "https://github.com/BenRGH/SoftE" & _
+    "ng_Team10A"
         '
         'Controls
         '
-        Me.AutoScaleDimensions = New SizeF(6.0!, 13.0!)
-        Me.AutoScaleMode = AutoScaleMode.Font
-        Me.BackgroundImage = ControlScheme
-        Me.BackgroundImageLayout = ImageLayout.Stretch
-        Me.ClientSize = New Size(683, 638)
-        Me.FormBorderStyle = FormBorderStyle.FixedSingle
+        Me.BackgroundImage = Global.SEGame.My.Resources.Resources.ControlScheme
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ClientSize = New System.Drawing.Size(683, 638)
+        Me.Controls.Add(Me.Label1)
         Me.Name = "Controls"
         Me.Text = "Controls"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 End Class
