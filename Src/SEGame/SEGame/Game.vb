@@ -2,31 +2,34 @@
 Imports System.Security.Cryptography.X509Certificates
 Imports System.Threading
 Public Class Game
+    'This form contains code for the main game window, all interactable elements
+    'and player controls are here.
+    'Authors:
+    'UP780065
 
-    'World
-    Dim _level As Integer = 0 'WIP
+    'World vars
+    Dim _lvl As Integer = 0 'WIP
     Dim _timeIndi As Integer = 0 'The clock in the top right
     Dim _paused As Boolean = False
     Public Ended As Boolean = False 'Used for the score form
 
-
-    'Character
-    Dim _nick As String
+    'Character vars
+    Dim _nick As String 'The character nickname that's saved into the db
     'The area the character can move in
     ReadOnly _movBounds = New Integer(,) {{-20, 430}, {200, 430}, {-20, 605}, {200, 605}} 'Each pair is a corner of the square
     Dim _health As Double = 100
-    Dim _animated As Boolean = False
-    Dim _lastShotTime As Integer
-    Dim _lastSpawnTime As Integer = 0
-    Dim _noKilled As Integer = 0
-    Dim _lvl As Integer = 0
-    Dim _wearingArmour As Boolean = False
+    Dim _animated As Boolean = False 'Whether the character is currently animated
+    Dim _lastShotTime As Integer 'Used for delaying shots
+    Dim _lastSpawnTime As Integer = 0 'Used to delay enemy spawns
+    Dim _noKilled As Integer = 0 'Number of killed enemies
+    Dim _wearingArmour As Boolean = False 'Applies the extra health modifier
 
     'Load window
     Private Sub Game_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'level = level save?
-        worldTimer.Enabled = True
-        charMovTimer_down.Enabled = True
+        'This function is run on form opening
+
+        worldTimer.Enabled = True 'Start the world timer
+        charMovTimer_down.Enabled = True 'Enable gravity
 
         'This box is to show what the bounding area looks like while debugging
         boundBoxOutline.Top = _movBounds(0, 1)
@@ -34,7 +37,7 @@ Public Class Game
         boundBoxOutline.Height = _movBounds(2, 1) - _movBounds(0, 1) 'lowest point - highest point = height
         boundBoxOutline.Width = _movBounds(1, 0) - _movBounds(0, 0) 'rightest point - leftest point = width
 
-        'Make the pause window the right size, by default it's small so it's not in the way
+        'Make the pause window the right size, by default it's small so it doesn't interfere
         pauseScreen.Width = 872
         pauseScreen.Height = 606
         pauseScreen.Top = 40
@@ -43,10 +46,10 @@ Public Class Game
         pausedLbl.Visible = False
 
         'Enemy starting pos
-        enemy1.Left = Right
+        enemy1.Left = Right 'Right is the main window's rightmost point
         enemy1.Visible = True
 
-        'Reset shop
+        'Reset shop - Disables all purchase options
         My.Settings.armour = False
         My.Settings.lazer = False
         My.Settings.god = False
@@ -55,9 +58,11 @@ Public Class Game
     End Sub
     'Close game window
     Private Sub exitBtn_click(sender As Object, e As EventArgs) Handles exitBtn.Click
+        'This function runs on form close
+
         Me.Close() 'Closes this form
 
-        'Stop and clear all timers
+        'Stop all timers
         worldTimer.Enabled = False
         charMovTimer_up.Enabled = False
         charMovTimer_down.Enabled = False
@@ -67,47 +72,48 @@ Public Class Game
     End Sub
     'Keypresses
     Private Sub Game_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        'This function runs on any keypress event
+
         'Is the game paused?
         If Not _paused Then
             'Check input keypress
             If e.KeyCode = Keys.W Then
-                charMovTimer_up.Enabled = True
+                charMovTimer_up.Enabled = True 'Move char up
                 charMovTimer_down.Enabled = False 'Turn off the gravity
-
 
             ElseIf e.KeyCode = Keys.A Then
                 If Not _animated Then
                     character.Image = My.Resources.Backwards 'Change animation
                     _animated = True 'Stops the character image constantly being set
                 End If
-                charMovTimer_left.Enabled = True
+                charMovTimer_left.Enabled = True 'Move char left
 
             ElseIf e.KeyCode = Keys.D Then
                 If Not _animated Then
                     character.Image = My.Resources.Foward 'Change animation
-                    _animated = True
+                    _animated = True 'See above
                 End If
-                charMovTimer_right.Enabled = True
+                charMovTimer_right.Enabled = True 'Move char right
 
             End If
         End If
-
     End Sub
-    'Keyups - This is the second half of keypresses
+    'Keyups
     Private Sub Game_KeyUp(sender As Object, e As KeyEventArgs) Handles Me.KeyUp
+        'This function runs on any key release/up event
 
         'Check key ups (when the key is released)
         If e.KeyCode = Keys.W Then
-            charMovTimer_up.Enabled = False
-            charMovTimer_down.Enabled = True 'Gravity
+            charMovTimer_up.Enabled = False 'Stop moving char up
+            charMovTimer_down.Enabled = True 'Gravity enabled again
 
         ElseIf e.KeyCode = Keys.A Then
-            charMovTimer_left.Enabled = False
+            charMovTimer_left.Enabled = False 'Stop moving char left
             character.Image = My.Resources.Idle 'Change animation
             _animated = False
 
         ElseIf e.KeyCode = Keys.D Then
-            charMovTimer_right.Enabled = False
+            charMovTimer_right.Enabled = False 'Stop moving char right
             character.Image = My.Resources.Idle
             _animated = False
 
@@ -115,16 +121,16 @@ Public Class Game
 
     End Sub
     'Global clock
-    'This clock is used to update everything without a specific timer
     Private Sub worldTimer_Tick(sender As Object, e As EventArgs) Handles worldTimer.Tick
+        'This timer is used to update everything without a specific timer, runs on every tick
 
         'Game time indicator
         _timeIndi += 1
-        Dim realTimeIndi As Integer = _timeIndi / 50
-        timeIndicator.Text = realTimeIndi
+        Dim realTimeIndi As Integer = _timeIndi / 50 'Remove decimals
+        timeIndicator.Text = realTimeIndi 'realTimeIndi is only used in this sub
 
         If realTimeIndi >= _lastSpawnTime + My.Settings.spawnRate And Not enemy1.Visible Then 'This allows enemies to respawn
-            enemyMoveTimer.Enabled = True
+            enemyMoveTimer.Enabled = True 'Start moving the enemy left
             _lastSpawnTime = realTimeIndi
         End If
 
@@ -138,22 +144,20 @@ Public Class Game
         End If
 
         'Score update
-        My.Settings.currentScore = realTimeIndi + (_noKilled * 10)
+        My.Settings.currentScore = realTimeIndi + (_noKilled * 10) 'Score is time + (killed * 10)
 
         If _noKilled >= 10 Then
-            LoadLevel(_lvl + 1)
+            LoadLevel(_lvl + 1) 'Change level after a 10 kills
         End If
 
         'Shop items check
         If My.Settings.armour Then
-            armourAlert.Visible = True
-            If Not _wearingArmour Then
+            armourAlert.Visible = True 'Tell player armour is on
+            If Not _wearingArmour Then 'We don't want multiple layers of armour
                 _health += 20 'Increase health due to armour
             End If
             _wearingArmour = True
         End If
-
-
 
 
         'Debug only
@@ -166,7 +170,9 @@ Public Class Game
     End Sub
     'Movement UP steps
     Private Sub charMovTimer_up_Tick(sender As Object, e As EventArgs) Handles charMovTimer_up.Tick
-        If BoundCheck("up") Then
+        'Moves character up, runs on tick
+
+        If BoundCheck("up") Then 'Check if in bounds
             character.Top -= My.Settings.speed
         End If
 
@@ -174,7 +180,9 @@ Public Class Game
     End Sub
     'Movement DOWN steps
     Private Sub charMovTimer_down_Tick(sender As Object, e As EventArgs) Handles charMovTimer_down.Tick
-        If BoundCheck("down") Then
+        'Moves character down as gravity, runs on tick
+
+        If BoundCheck("down") Then 'Checks char is in bounds
             If Not _paused Then 'movement only when the game is not paused
                 character.Top += My.Settings.speed
             End If
@@ -184,7 +192,9 @@ Public Class Game
     End Sub
     'Movement LEFT steps
     Private Sub charMovTimer_left_Tick(sender As Object, e As EventArgs) Handles charMovTimer_left.Tick
-        If BoundCheck("left") Then
+        'Moves character left, runs on tick
+
+        If BoundCheck("left") Then 'Checks char is within bounds
             character.Left -= My.Settings.speed
         End If
 
@@ -192,14 +202,20 @@ Public Class Game
     End Sub
     'Movement RIGHT steps
     Private Sub charMovTimer_right_Tick(sender As Object, e As EventArgs) Handles charMovTimer_right.Tick
-        If BoundCheck("right") Then
+        'Moves character right, runs on tick
+
+        If BoundCheck("right") Then 'Checks char is within bounds
             character.Left += My.Settings.speed
         End If
 
         debugBox.Text = "righting"
     End Sub
-    'Check if character outside allowed zone
+    'Bounds Check
     Private Function BoundCheck(direction As String)
+        'This takes a direction as a string input and returns true or false depending
+        'on whether the character can move in that direction without passing 
+        'through the set bounds
+
         Dim canMove As Boolean = False
 
         If direction = "up" Then
@@ -229,10 +245,15 @@ Public Class Game
         End If
 
         Return canMove
+
     End Function
     'Level load
     Private Sub LoadLevel(level As Integer)
-        _noKilled = 0
+        'Loads the level by given int, currently only 2 levels
+
+        _noKilled = 0 'Reset kill count
+
+        'Below makes a small level up notification slide up the screen then hide
         nextLevelLbl.Visible = True
         Dim i As Integer
         For i = 1 To 20
@@ -242,7 +263,7 @@ Public Class Game
         nextLevelLbl.Visible = False
         nextLevelLbl.Top -= 40 'Return to old pos
 
-        Me.BackgroundImage = My.Resources.background2
+        Me.BackgroundImage = My.Resources.background2 'Loads the second level image into the background
     End Sub
     'Debug damage button
     Private Sub damageDebug_Click(sender As Object, e As EventArgs) Handles damageDebug.Click
@@ -251,6 +272,8 @@ Public Class Game
     End Sub
     'Endgame
     Private Sub EndGame()
+        'This runs on game completion, it opens the highscore form and closes the game
+
         Ended = True
 
         'Open highscores window
@@ -273,16 +296,16 @@ Public Class Game
 
         '*0.1 ...1 instead of / 2
 
-        'Used to aim projectiles
+        'Used to aim projectiles, WIP
 
 
         'Shooting
-        If _timeIndi >= _lastShotTime + My.Settings.reloadSpeed Then 'This is the reload limit
-            projectileBox.Left = character.Right
-            projectileBox.Top = character.Top + (character.Height / 2)
+        If _timeIndi >= _lastShotTime + My.Settings.reloadSpeed Then 'This is the reload delay
+            projectileBox.Left = character.Right 'Position bullet
+            projectileBox.Top = character.Top + (character.Height / 2) 'Pos bullet
             projectileBox.Visible = True
-            shootTimer.Enabled = True
-            _lastShotTime = _timeIndi
+            shootTimer.Enabled = True 'Start movement of bullet
+            _lastShotTime = _timeIndi 'Used for delay
 
             'Look like he's shooting
             character.Image = My.Resources.Shooting
@@ -293,13 +316,16 @@ Public Class Game
     End Sub
     'Projectile movement
     Private Sub shootTimer_Tick(sender As Object, e As EventArgs) Handles shootTimer.Tick
+        'This is run on tick and moves the player's projectile
+
         If projectileBox.Left >= Me.Width Then
-            shootTimer.Enabled = False 'Stop moving once it's further than the edge of the window
+            shootTimer.Enabled = False 'Stop moving once it's further than the edge of the form
         Else
             projectileBox.Left += 20 'Change this for the speed of projectile
         End If
 
-        If projectileBox.Bounds.IntersectsWith(enemy1.Bounds) Then '<----------Change specific enemy to enemy array!----------
+        'Below runs if the bounds of the bullet are found to be inside the bounds of the enemy
+        If projectileBox.Bounds.IntersectsWith(enemy1.Bounds) Then
             'Kill the enemy
             enemy1.Visible = False
             enemyMoveTimer.Enabled = False
@@ -319,8 +345,10 @@ Public Class Game
     End Function
     'Pause button
     Private Sub Pause(sender As Object, e As EventArgs) Handles pauseBtn.Click
+        'This code runs on clicking the pause button, it stops all game actions until run again
+
         Dim shopWindow As Shop
-        shopWindow = New Shop()
+        shopWindow = New Shop() 'Opens the shop form
 
         If _paused Then 'If the game is already paused then unpause
             _paused = False
@@ -353,13 +381,15 @@ Public Class Game
     End Sub
     'Enemy timer
     Private Sub enemyMoveTimer_Tick(sender As Object, e As EventArgs) Handles enemyMoveTimer.Tick
+        'This runs on tick, moves the enemy towards the player
+
         enemy1.Visible = True '<-------------------------------Change this to array when implemented!
 
         'Movement
         If enemy1.Left <= character.Right Then
-            _health -= 1
+            _health -= 1 'Damage player on contact
         Else
-            enemy1.Left -= My.Settings.enemySpeed
+            enemy1.Left -= My.Settings.enemySpeed 'Move towards player
         End If
 
     End Sub

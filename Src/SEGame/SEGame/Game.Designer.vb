@@ -285,6 +285,7 @@ Partial Class Game
         '
         'healthBox
         '
+        Me.healthBox.Enabled = False
         Me.healthBox.Location = New System.Drawing.Point(85, 70)
         Me.healthBox.Name = "healthBox"
         Me.healthBox.Size = New System.Drawing.Size(100, 20)
