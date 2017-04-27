@@ -11,6 +11,8 @@ or if you prefer, use your favourite editor to open the **.vb** files contained 
 If you want to just play the game then you can find the most recent build in the *build* directory.
 Controls are WASD and mouse left click.
 
+If you want to view the main form code see Src>SEGame>Game.vb
+
 # Who?
 Contributors are:
 
