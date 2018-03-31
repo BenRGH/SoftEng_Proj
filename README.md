@@ -1,4 +1,4 @@
-# SoftEng_Team10A
+# SoftEng_Proj
 
 # Description
 This project is a computer game application, it's a 2D shooter with database score storing functionality.
