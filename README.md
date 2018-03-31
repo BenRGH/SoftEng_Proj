@@ -13,18 +13,6 @@ Controls are WASD and mouse left click.
 
 If you want to view the main form code see Src>SEGame>Game.vb
 
-# Who?
-Contributors are:
-
-Ben Rose
-
-Bruno Bernardo
-
-Cieran ...
-
-Danny ...
-
-Luke ...
 
 Audio (royalty free) taken from Freesound.org, for legal info see https://www.freesound.org/help/tos_web/
 
